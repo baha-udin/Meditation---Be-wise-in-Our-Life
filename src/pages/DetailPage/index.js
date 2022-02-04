@@ -1,0 +1,271 @@
+import React from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  ScrollView,
+  ImageBackground,
+  Button,
+} from 'react-native';
+
+const cardNight = require('./../../assets/bg-top.png');
+const cardSleep = require('./../../assets/card-sleep.png');
+const iconArrow = require('./../../assets/icon-arrow.png');
+const iconDownload = require('./../../assets/icon-download.png');
+const iconHeadset = require('./../../assets/icon-headset.png');
+const iconsavelove = require('./../../assets/icon-savelove.png');
+const icontinylove = require('./../../assets/icon-tinylove.png');
+
+const DetailPage = () => {
+  return (
+    <View style={styles.container}>
+      <ScrollView vertical style={styles.mainContent}>
+        <View style={styles.sectionTop}>
+          <ImageBackground source={cardNight} style={styles.bgTop}>
+            <View style={styles.wrap}>
+              <View>
+                <Image source={iconArrow} style={styles.iconTop} />
+              </View>
+              <View style={styles.rightTop}>
+                <Image source={iconsavelove} style={styles.iconSelfLove} />
+                <Image source={iconDownload} style={styles.iconTop} />
+              </View>
+            </View>
+          </ImageBackground>
+        </View>
+
+        <View style={styles.sectionTittle}>
+          <View>
+            <Text style={styles.titleMusic}>Night Island</Text>
+          </View>
+          <View>
+            <Text style={styles.longMusic}>45 MIN . SLEEP MUSIC</Text>
+          </View>
+          <View>
+            <Text style={styles.descMusic}>
+              Ease the mind into a restful night’s sleep with these deep,
+              amblent tones.
+            </Text>
+          </View>
+          <View style={styles.engagement}>
+            <View style={styles.wrapEngagement}>
+              <Image source={icontinylove} style={styles.iconTiny} />
+              <Text style={styles.descEngagement}>24.234 Favorites</Text>
+            </View>
+            <View style={styles.wrapEngagementRight}>
+              <Image source={iconHeadset} style={styles.iconTiny} />
+              <Text style={styles.descEngagement}>21.764 Listening</Text>
+            </View>
+          </View>
+          <View style={styles.garis} />
+
+          {/* Bagian Related */}
+          <View style={styles.related}>
+            <Text style={styles.titleRelated}>Related</Text>
+            <View style={styles.wrapRelated}>
+              {/* Mulai */}
+              <View style={styles.cardPlaylist}>
+                <View style={styles.card1}>
+                  <Image source={cardNight} style={styles.imgCard} />
+                  <Text style={styles.titleCardNight}>Night Island</Text>
+                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+                </View>
+                <View style={styles.card1}>
+                  <Image source={cardSleep} style={styles.imgCard} />
+                  <Text style={styles.titleCardNight}>Sweet Sleep</Text>
+                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+                </View>
+              </View>
+              <View style={styles.cardPlaylist2}>
+                <View style={styles.card1}>
+                  <Image source={cardNight} style={styles.imgCard} />
+                  <Text style={styles.titleCardNight}>Night Island</Text>
+                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+                </View>
+                <View style={styles.card1}>
+                  <Image source={cardSleep} style={styles.imgCard} />
+                  <Text style={styles.titleCardNight}>Sweet Sleep</Text>
+                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+
+      <View style={styles.ctaBawah}>
+        <Text style={styles.playNow}>PLAY</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#03174C',
+  },
+  mainContent: {
+    flex: 1,
+  },
+  sectionTop: {
+    borderRadius: 16,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  bgTop: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
+    borderRadius: 20,
+  },
+  wrap: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingTop: 16,
+  },
+  rightTop: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  iconTop: {
+    width: 40,
+    height: 40,
+    resizeMode: 'cover',
+  },
+  sectionTittle: {
+    display: 'flex',
+    flexDirection: 'column',
+    paddingHorizontal: 16,
+  },
+  titleMusic: {
+    color: '#E6E7F2',
+    paddingTop: 16,
+    fontSize: 24,
+    fontWeight: '700',
+  },
+  longMusic: {
+    color: '#98A1BD',
+    fontSize: 13,
+    paddingTop: 4,
+    letterSpacing: 1,
+  },
+  descMusic: {
+    paddingTop: 8,
+    color: '#98A1BD',
+    fontSize: 13,
+    paddingRight: 16,
+  },
+  engagement: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingTop: 20,
+  },
+  wrapEngagement: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  wrapEngagementRight: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginLeft: 18,
+    alignItems: 'center',
+  },
+  descEngagement: {
+    marginLeft: 8,
+    color: '#E6E7F2',
+    fontSize: 13,
+  },
+  iconSelfLove: {
+    width: 44,
+    height: 44,
+  },
+  iconTiny: {
+    width: 20,
+    height: 18,
+  },
+  garis: {
+    marginTop: 18,
+    borderWidth: 0.3,
+    borderStyle: 'solid',
+    borderColor: '#425695',
+  },
+  related: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: 16,
+  },
+  titleRelated: {
+    fontSize: 24,
+    fontWeight: '500',
+    color: '#E6E7F2',
+  },
+  wrapRelated: {},
+  cardPlaylist: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: 16,
+    marginBottom: 8,
+    paddingBottom: '8%',
+  },
+  cardPlaylist2: {
+    marginTop: -12,
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: 8,
+  },
+  card1: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    paddingRight: 14,
+  },
+  imgCard: {
+    width: 150,
+    height: 100,
+    borderRadius: 12,
+  },
+  titleCardNight: {
+    marginTop: 8,
+    color: '#E6E7F2',
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  descCardNight: {
+    marginTop: 6,
+    color: '#E6E7F2',
+    opacity: 0.9,
+    fontSize: 13,
+    fontWeight: '300',
+  },
+  ctaBawah: {
+    height: 70,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  playNow: {
+    backgroundColor: '#8E97FD',
+    color: '#F6F1FB',
+    fontSize: 15,
+    fontWeight: '600',
+    letterSpacing: 1,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    textAlign: 'center',
+    borderRadius: 12,
+    width: '80%',
+  },
+});
+
+export default DetailPage;
