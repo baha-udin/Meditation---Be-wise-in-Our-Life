@@ -9,6 +9,7 @@ const Colors = {
   Basic_BG: '#1F265E',
   FontColor: '#E6E7F2',
   BUTTON_BG: '#8E97FD',
+  InActiveMenu: '#98A1BD',
 };
 
 export default Colors;

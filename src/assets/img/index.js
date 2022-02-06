@@ -9,8 +9,14 @@ import IconSleep from './IconSleep.png';
 import IconSleepActive from './IconSleep-Active.png';
 import IconProfile from './IconProfile.png';
 import IconProfileActive from './IconProfile-Active.png';
+import BgLogin from './bg-login.png';
+import IconFb from './IconFb.png';
+import IconGoogle from './IconGoogle.png';
 
 export {
+  IconFb,
+  IconGoogle,
+  BgLogin,
   heroImage,
   IconHome,
   IconHomeActive,
