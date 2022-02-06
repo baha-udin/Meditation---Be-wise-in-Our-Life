@@ -14,6 +14,7 @@ const bgCard = require('./../../assets/hero-card-background.png');
 const cardSleep = require('./../../assets/card-sleep.png');
 const cardSweet = require('./../../assets/card-sweet.png');
 const cardMoon = require('./../../assets/card-moon.png');
+import Colors from './../../assets/Colors';
 
 const Home = () => {
   return (

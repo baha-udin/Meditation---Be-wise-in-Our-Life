@@ -237,7 +237,7 @@ project.ext.vectoricons = [
   'FontAwesome5_Brands',
   'FontAwesome5_Regular',
   'FontAwesome5_Solid',
-  'Foundation',
+  'Foundation',r
   'Ionicons',
   'MaterialIcons',
   'MaterialCommunityIcons',
@@ -248,5 +248,3 @@ project.ext.vectoricons = [
  ] 
 ]
  
-
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

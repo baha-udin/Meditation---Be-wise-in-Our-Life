@@ -36,7 +36,8 @@ const BottomNavigation = ({navigation}) => {
           width: '100%',
           bottom: 0,
           backgroundColor: Colors.Basic_BG,
-          borderRadius: 10,
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 10,
           paddingVertical: 6,
           ...styles.tabBarStyling,
         },
@@ -63,7 +64,7 @@ const BottomNavigation = ({navigation}) => {
                 style={{
                   fontSize: 12,
                   marginTop: 4,
-                  color: focused ? Colors.FontColor : '',
+                  color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
                 Home
@@ -94,7 +95,7 @@ const BottomNavigation = ({navigation}) => {
                 style={{
                   fontSize: 12,
                   marginTop: 4,
-                  color: focused ? Colors.FontColor : '',
+                  color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
                 Sleep
@@ -125,7 +126,7 @@ const BottomNavigation = ({navigation}) => {
                 style={{
                   fontSize: 12,
                   marginTop: 4,
-                  color: focused ? Colors.FontColor : '',
+                  color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
                 Meditate
@@ -156,7 +157,7 @@ const BottomNavigation = ({navigation}) => {
                 style={{
                   fontSize: 12,
                   marginTop: 4,
-                  color: focused ? Colors.FontColor : '',
+                  color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
                 Music
@@ -187,7 +188,7 @@ const BottomNavigation = ({navigation}) => {
                 style={{
                   fontSize: 12,
                   marginTop: 4,
-                  color: focused ? Colors.FontColor : '',
+                  color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
                 Profile
