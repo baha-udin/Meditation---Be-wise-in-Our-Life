@@ -237,7 +237,7 @@ project.ext.vectoricons = [
   'FontAwesome5_Brands',
   'FontAwesome5_Regular',
   'FontAwesome5_Solid',
-  'Foundation',r
+  'Foundation',
   'Ionicons',
   'MaterialIcons',
   'MaterialCommunityIcons',

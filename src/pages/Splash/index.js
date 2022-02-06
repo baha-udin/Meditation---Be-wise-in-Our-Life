@@ -7,7 +7,7 @@ import Colors from './../../assets/Colors';
 const Splash = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('BottomNavigation');
+      navigation.replace('OnBoarding');
     }, 5000);
   }, [navigation]);
 

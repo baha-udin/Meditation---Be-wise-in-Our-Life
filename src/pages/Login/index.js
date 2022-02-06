@@ -60,7 +60,9 @@ const Login = ({navigation}) => {
       </ScrollView>
       <View style={styles.wrapSignUp}>
         <Text style={styles.textHaveAccount}>ALREADY HAVE AN ACCOUNT?</Text>
-        <TouchableOpacity style={styles.ctaSignUp}>
+        <TouchableOpacity
+          style={styles.ctaSignUp}
+          onPress={() => navigation.navigate('Register')}>
           <Text style={styles.textCtaSignUp}>SIGN UP</Text>
         </TouchableOpacity>
       </View>
