@@ -9,11 +9,11 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 import Colors from '../../assets/Colors';
 import {BgLogin, IconFb, IconGoogle} from '../../assets/img';
 import InputPrimary from '../../components/InputPrimary';
 import ButtonPrimary from '../../components/ButtonPrimary';
-import CheckBox from '@react-native-community/checkbox';
 
 const Register = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     height: '100%',
     flex: 1,
     justifyContent: 'flex-start',
+    paddingBottom: 8,
   },
   sectionHeader: {
     paddingTop: '22%',
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
   },
   wrapFb: {
     backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: 16,
+    paddingVertical: 12,
     paddingHorizontal: '8%',
     flexDirection: 'row',
     borderRadius: 30,
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
     marginTop: '4%',
     borderWidth: 1,
     borderColor: Colors.WHITE,
-    paddingVertical: 16,
+    paddingVertical: 12,
     paddingHorizontal: '8%',
     flexDirection: 'row',
     borderRadius: 30,
@@ -169,7 +170,7 @@ const styles = StyleSheet.create({
     marginTop: '4%',
     marginHorizontal: '10%',
     backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: 16,
+    paddingVertical: 12,
     flexDirection: 'row',
     borderRadius: 30,
     width: '80%',

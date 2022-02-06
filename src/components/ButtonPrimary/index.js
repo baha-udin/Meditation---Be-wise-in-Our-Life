@@ -18,7 +18,7 @@ export default ButtonPrimary;
 const styles = StyleSheet.create({
   wrapFb: {
     backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: 16,
+    paddingVertical: 12,
     paddingHorizontal: '8%',
     flexDirection: 'row',
     borderRadius: 30,

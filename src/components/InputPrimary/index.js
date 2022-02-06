@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
   wrapInputEmail: {
     marginTop: '10%',
     backgroundColor: 'white',
-    paddingVertical: 6,
+    paddingVertical: 3,
     paddingHorizontal: 16,
     borderRadius: 15,
   },
   inputEmail: {
-    color: Colors.FontColor,
+    color: 'black',
     fontWeight: '400',
     fontSize: 14,
   },
