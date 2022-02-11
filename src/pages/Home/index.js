@@ -7,6 +7,7 @@ import {
   ScrollView,
   ImageBackground,
   Button,
+  TouchableOpacity,
 } from 'react-native';
 const cardNight = require('./../../assets/card-night.png');
 const bgImage = require('./../../assets/ornamen.png');
@@ -16,7 +17,7 @@ const cardSweet = require('./../../assets/card-sweet.png');
 const cardMoon = require('./../../assets/card-moon.png');
 import Colors from './../../assets/Colors';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
@@ -134,11 +135,13 @@ const Home = () => {
 
           {/* Bagian card bawah 1*/}
           <ScrollView horizontal style={styles.cardPlaylist}>
-            <View style={styles.card1}>
-              <Image source={cardNight} style={styles.imgCard} />
-              <Text style={styles.titleCardNight}>Night Island</Text>
-              <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('DetailPage')}>
+              <View style={styles.card1}>
+                <Image source={cardNight} style={styles.imgCard} />
+                <Text style={styles.titleCardNight}>Night Island</Text>
+                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+              </View>
+            </TouchableOpacity>
             <View style={styles.card1}>
               <Image source={cardSleep} style={styles.imgCard} />
               <Text style={styles.titleCardNight}>Sweet Sleep</Text>
@@ -191,6 +194,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#03174C',
     width: '100%',
     height: '100%',
+    paddingBottom: '10%',
   },
   bgHero: {
     width: '100%',

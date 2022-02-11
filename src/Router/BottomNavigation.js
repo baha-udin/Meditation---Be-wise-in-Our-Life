@@ -58,7 +58,7 @@ const BottomNavigation = ({navigation}) => {
               }}>
               <Image
                 source={focused ? IconHomeActive : IconHome}
-                style={{width: 24, height: 24, opacity: 0.8}}
+                style={{height: 24, opacity: 0.8}}
               />
               <Text
                 style={{
@@ -89,7 +89,7 @@ const BottomNavigation = ({navigation}) => {
               }}>
               <Image
                 source={focused ? IconSleepActive : IconSleep}
-                style={{width: 24, height: 24, opacity: 0.8}}
+                style={{height: 24, opacity: 0.8}}
               />
               <Text
                 style={{
@@ -120,7 +120,7 @@ const BottomNavigation = ({navigation}) => {
               }}>
               <Image
                 source={focused ? IconMeditateActive : IconMeditate}
-                style={{width: 24, height: 24, opacity: 0.8}}
+                style={{height: 24, opacity: 0.8}}
               />
               <Text
                 style={{
@@ -151,7 +151,7 @@ const BottomNavigation = ({navigation}) => {
               }}>
               <Image
                 source={focused ? IconMusicActive : IconMusic}
-                style={{width: 24, height: 24, opacity: 0.8}}
+                style={{height: 24, opacity: 0.8}}
               />
               <Text
                 style={{
@@ -182,7 +182,7 @@ const BottomNavigation = ({navigation}) => {
               }}>
               <Image
                 source={focused ? IconProfileActive : IconProfile}
-                style={{width: 24, height: 24, opacity: 0.8}}
+                style={{height: 24, opacity: 0.8}}
               />
               <Text
                 style={{

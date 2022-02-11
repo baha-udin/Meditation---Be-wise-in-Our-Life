@@ -12,8 +12,25 @@ import IconProfileActive from './IconProfile-Active.png';
 import BgLogin from './bg-login.png';
 import IconFb from './IconFb.png';
 import IconGoogle from './IconGoogle.png';
+import IconBack from './icon-back.png';
+import IconBackWad from './icon-backward.png';
+
+import IconForwad from './icon-forward.png';
+import IconLove from './Icon-Love.png';
+import IconPause from './Icon-pause.png';
+import IconTimer from './icon-timer.png';
+import BackgroundPageMucic from './backgroundpage.png';
+import IconDownloads from './Icon-download.png';
 
 export {
+  IconBack,
+  IconBackWad,
+  IconDownloads,
+  IconForwad,
+  IconLove,
+  IconPause,
+  IconTimer,
+  BackgroundPageMucic,
   IconFb,
   IconGoogle,
   BgLogin,

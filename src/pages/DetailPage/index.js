@@ -7,6 +7,7 @@ import {
   ScrollView,
   ImageBackground,
   Button,
+  TouchableOpacity,
 } from 'react-native';
 
 const cardNight = require('./../../assets/bg-top.png');
@@ -17,7 +18,7 @@ const iconHeadset = require('./../../assets/icon-headset.png');
 const iconsavelove = require('./../../assets/icon-savelove.png');
 const icontinylove = require('./../../assets/icon-tinylove.png');
 
-const DetailPage = () => {
+const DetailPage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView vertical style={styles.mainContent}>
@@ -25,7 +26,12 @@ const DetailPage = () => {
           <ImageBackground source={cardNight} style={styles.bgTop}>
             <View style={styles.wrap}>
               <View>
-                <Image source={iconArrow} style={styles.iconTop} />
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate('BottomNavigation', {screen: 'Home'})
+                  }>
+                  <Image source={iconArrow} style={styles.iconTop} />
+                </TouchableOpacity>
               </View>
               <View style={styles.rightTop}>
                 <Image source={iconsavelove} style={styles.iconSelfLove} />
@@ -95,7 +101,9 @@ const DetailPage = () => {
       </ScrollView>
 
       <View style={styles.ctaBawah}>
-        <Text style={styles.playNow}>PLAY</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('MusicPlayer')}>
+          <Text style={styles.playNow}>PLAY</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -105,6 +113,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#03174C',
+    width: '100%',
+    height: '100%',
   },
   mainContent: {
     flex: 1,
@@ -213,14 +223,18 @@ const styles = StyleSheet.create({
   cardPlaylist: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
     marginTop: 16,
     marginBottom: 8,
     paddingBottom: '8%',
   },
   cardPlaylist2: {
-    marginTop: -12,
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    marginTop: '-5%',
     marginBottom: 8,
   },
   card1: {
@@ -249,7 +263,7 @@ const styles = StyleSheet.create({
     fontWeight: '300',
   },
   ctaBawah: {
-    height: 70,
+    height: 75,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -261,7 +275,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     letterSpacing: 1,
     paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingVertical: 12,
     textAlign: 'center',
     borderRadius: 12,
     width: '80%',

@@ -8,9 +8,11 @@ import Splash from './Splash';
 import Login from './Login';
 import Register from './Register';
 import OnBoarding from './OnBoarding';
+import MusicPlayer from './MusicPlayer';
 
 export {
   Home,
+  MusicPlayer,
   DetailPage,
   Meditate,
   Music,

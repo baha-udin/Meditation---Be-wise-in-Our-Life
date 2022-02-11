@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Login, Register, OnBoarding} from './../pages';
+import {Login, Register, OnBoarding, DetailPage, MusicPlayer} from './../pages';
 import Splash from './../pages/Splash';
 import BottomNavigation from './BottomNavigation';
 
@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Registerr">
+    <Stack.Navigator initialRouteName="MusicPlayer">
       <Stack.Screen
         name="Splash"
         component={Splash}
@@ -36,6 +36,16 @@ const Router = () => {
       <Stack.Screen
         name="OnBoarding"
         component={OnBoarding}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="DetailPager"
+        component={DetailPage}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="MusicPlayer"
+        component={MusicPlayer}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
