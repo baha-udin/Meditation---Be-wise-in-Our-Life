@@ -15,11 +15,11 @@ import IconGoogle from './IconGoogle.png';
 import IconBack from './icon-back.png';
 import IconBackWad from './icon-backward.png';
 import IconForwad from './icon-forward.png';
-import IconLove from './Icon-Love.png';
-import IconPause from './Icon-pause.png';
+import IconLove from './icon-love.png';
+import IconPause from './icon-pause.png';
 import IconTimer from './icon-timer.png';
 import BackgroundPageMucic from './backgroundpage.png';
-import IconDownloads from './Icon-download.png';
+import IconDownloads from './icon-download.png';
 import IconPlay from './buttonPlay.png';
 import BackgroundOnboard from './background-onboard.png';
 import BgTop from './bg-top.png';
@@ -43,8 +43,14 @@ import IconTinyLove from './icon-tinylove.png';
 import IlustSignUp from './ilust-onboard.png';
 import IlustOnboard from './ilustration-onboard.png';
 import Ornamen from './ornamen.png';
+import BackgroundSplash from './background-splash.png';
+import IlustrastionSplash from './ilustration-splash.png';
+import ImageOnboard from './imageOnboard.png';
 
 export {
+  BackgroundSplash,
+  IlustrastionSplash,
+  ImageOnboard,
   IconPlay,
   IconBack,
   IconBackWad,
