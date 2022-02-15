@@ -5,7 +5,11 @@ import Colors from '../../assets/Colors';
 const InputPrimary = props => {
   return (
     <View style={styles.wrapInputEmail}>
-      <TextInput placeholder={props.placeholder} style={styles.inputEmail} />
+      <TextInput
+        placeholder={props.placeholder}
+        style={styles.inputEmail}
+        secureTextEntry={props.secureTextEntry}
+      />
     </View>
   );
 };

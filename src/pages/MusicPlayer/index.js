@@ -1,5 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, ImageBackground, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import Colors from './../../assets/Colors';
 import {
   IconBack,
@@ -8,11 +15,13 @@ import {
   IconForwad,
   IconLove,
   IconPause,
+  IconPlay,
   IconTimer,
   BackgroundPageMucic,
 } from '../../assets/img';
 
-const MusicPlayer = () => {
+const MusicPlayer = ({navigation}) => {
+  const [onPress, setOnPress] = useState(false);
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -22,7 +31,9 @@ const MusicPlayer = () => {
         <View style={styles.wrapTop}>
           {/* Bagian Atas Kiri */}
           <View>
-            <Image source={IconBack} style={styles.IconBack} />
+            <TouchableOpacity onPress={() => navigation.navigate('DetailPage')}>
+              <Image source={IconBack} style={styles.IconBack} />
+            </TouchableOpacity>
           </View>
           {/* Bagian Atas Kanan */}
           <View style={styles.wrapTopRight}>
@@ -40,7 +51,11 @@ const MusicPlayer = () => {
           {/* bagian play, backwad, forwad */}
           <View style={styles.wrapButtonNavigate}>
             <Image source={IconForwad} style={styles.IconBack} />
-            <Image source={IconPause} style={styles.IconPause} />
+            {onPress ? (
+              <Image source={IconPlay} style={styles.IconPause} />
+            ) : (
+              <Image source={IconPause} style={styles.IconPause} />
+            )}
             <Image source={IconForwad} style={styles.IconBack} />
           </View>
           <View style={styles.wrapTimer}>

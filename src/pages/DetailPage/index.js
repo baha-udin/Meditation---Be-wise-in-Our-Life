@@ -9,6 +9,7 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
+import Colors from '../../assets/Colors';
 
 const cardNight = require('./../../assets/bg-top.png');
 const cardSleep = require('./../../assets/card-sleep.png');
@@ -264,12 +265,13 @@ const styles = StyleSheet.create({
   },
   ctaBawah: {
     height: 75,
+    width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    paddingHorizontal: '5%',
   },
   playNow: {
-    backgroundColor: '#8E97FD',
+    backgroundColor: Colors.BUTTON_BG,
     color: '#F6F1FB',
     fontSize: 15,
     fontWeight: '600',
@@ -278,7 +280,6 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     textAlign: 'center',
     borderRadius: 12,
-    width: '80%',
   },
 });
 

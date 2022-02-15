@@ -21,8 +21,10 @@ import IconPause from './Icon-pause.png';
 import IconTimer from './icon-timer.png';
 import BackgroundPageMucic from './backgroundpage.png';
 import IconDownloads from './Icon-download.png';
+import IconPlay from './buttonPlay.png';
 
 export {
+  IconPlay,
   IconBack,
   IconBackWad,
   IconDownloads,

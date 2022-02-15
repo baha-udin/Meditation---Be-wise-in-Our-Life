@@ -162,7 +162,6 @@ const styles = StyleSheet.create({
     color: Colors.FontColor,
     fontWeight: '400',
     fontSize: 14,
-    outlineStyle: 'none',
   },
   wrapCTA: {
     marginTop: '8%',

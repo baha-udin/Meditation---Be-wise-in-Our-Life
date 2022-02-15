@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MusicPlayer">
+    <Stack.Navigator initialRouteName="OnBoarding">
       <Stack.Screen
         name="Splash"
         component={Splash}
@@ -39,7 +39,7 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="DetailPager"
+        name="DetailPage"
         component={DetailPage}
         options={{headerShown: false}}
       />
