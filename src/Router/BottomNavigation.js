@@ -20,7 +20,6 @@ import Colors from './../assets/Colors';
 const Tab = createBottomTabNavigator();
 
 const BottomNavigation = ({navigation}) => {
-  // Tab.Navigator ini nampung bottom menu
   return (
     <Tab.Navigator
       initialRouteName="Home"

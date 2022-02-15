@@ -42,7 +42,7 @@ const Register = ({navigation}) => {
             <Text style={styles.optionLogin}>Or Login with Email</Text>
             <InputPrimary placeholder="Full Name" />
             <InputPrimary placeholder="Email" />
-            <InputPrimary placeholder="Password" />
+            <InputPrimary placeholder="Password" secureTextEntry={true} />
           </View>
           {/* section checkbox agreement */}
 
@@ -62,7 +62,7 @@ const Register = ({navigation}) => {
               navigation.navigate('BottomNavigation', {screen: 'Home'})
             }>
             <View style={styles.wrapCTA}>
-              <Text style={styles.textLogin}>LOG IN</Text>
+              <Text style={styles.textLogin}>Register</Text>
             </View>
           </TouchableOpacity>
         </ScrollView>
