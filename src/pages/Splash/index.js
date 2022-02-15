@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
+import {
+  BackgroundOnboard,
+  BackgroundSplash,
+  IlustrastionSplash,
+} from '../../assets/img';
 import Colors from './../../assets/Colors';
-import {IlustOnboard, Ornamen} from '../../assets/img';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
@@ -14,7 +18,7 @@ const Splash = ({navigation}) => {
     <View style={styles.container}>
       <ImageBackground
         resizeMode={'cover'}
-        source={IlustOnboard}
+        source={BackgroundSplash}
         style={{width: '100%', height: '100%', marginTop: 30}}>
         <View style={styles.sectionTop}>
           <Text style={styles.title}>Welcome to Sleep</Text>
@@ -22,7 +26,7 @@ const Splash = ({navigation}) => {
             Explore the new experience of sleep. it uses sound and visualization
             to create perfect conditions for refreshing sleep.
           </Text>
-          <Image source={Ornamen} style={styles.ImageSplash} />
+          <Image source={IlustrastionSplash} style={styles.ImageSplash} />
         </View>
         <View style={styles.sectionBottom}>
           <Text style={styles.ctaStarted}>GET STARTED</Text>

@@ -44,10 +44,7 @@ const Home = ({navigation}) => {
                   {/* card 1 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIcon}>
-                      <Image
-                        style={styles.iconFeature}
-                        source={IconAll}
-                      />
+                      <Image style={styles.iconFeature} source={IconAll} />
                     </View>
                     <Text style={styles.textFeature}>All</Text>
                   </View>
@@ -55,10 +52,7 @@ const Home = ({navigation}) => {
                   {/* card 2 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIconOther}>
-                      <Image
-                        style={styles.iconFeature}
-                        source={IconLove}
-                      />
+                      <Image style={styles.iconFeature} source={IconLove} />
                     </View>
                     <Text style={styles.textFeature}>My</Text>
                   </View>
@@ -66,10 +60,7 @@ const Home = ({navigation}) => {
                   {/* card 3 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIconOther}>
-                      <Image
-                        style={styles.iconFeature}
-                        source={IconAnxious}
-                      />
+                      <Image style={styles.iconFeature} source={IconAnxious} />
                     </View>
                     <Text style={styles.textFeature}>Anxious</Text>
                   </View>
@@ -77,10 +68,7 @@ const Home = ({navigation}) => {
                   {/* card 4 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIconOther}>
-                      <Image
-                        style={styles.iconFeature}
-                        source={IconSleep}
-                      />
+                      <Image style={styles.iconFeature} source={IconSleep} />
                     </View>
                     <Text style={styles.textFeature}>Sleep</Text>
                   </View>
@@ -88,10 +76,7 @@ const Home = ({navigation}) => {
                   {/* card 5 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIconOther}>
-                      <Image
-                        style={styles.iconFeature}
-                        source={IconKids}
-                      />
+                      <Image style={styles.iconFeature} source={IconKids} />
                     </View>
                     <Text style={styles.textFeature}>Kids</Text>
                   </View>
@@ -99,10 +84,7 @@ const Home = ({navigation}) => {
                   {/* card 6 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIconOther}>
-                      <Image
-                        style={styles.iconFeature}
-                        source={IconLove}
-                      />
+                      <Image style={styles.iconFeature} source={IconLove} />
                     </View>
                     <Text style={styles.textFeature}>My</Text>
                   </View>
@@ -110,10 +92,7 @@ const Home = ({navigation}) => {
                   {/* card 7 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIconOther}>
-                      <Image
-                        style={styles.iconFeature}
-                        source={IconAnxious}
-                      />
+                      <Image style={styles.iconFeature} source={IconAnxious} />
                     </View>
                     <Text style={styles.textFeature}>Anxious</Text>
                   </View>
@@ -141,7 +120,7 @@ const Home = ({navigation}) => {
           <ScrollView horizontal style={styles.cardPlaylist}>
             <TouchableOpacity onPress={() => navigation.navigate('DetailPage')}>
               <View style={styles.card1}>
-                <Image source={cardNight} style={styles.imgCard} />
+                <Image source={CardNight} style={styles.imgCard} />
                 <Text style={styles.titleCardNight}>Night Island</Text>
                 <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
               </View>
