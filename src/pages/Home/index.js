@@ -52,7 +52,7 @@ const Home = ({navigation}) => {
                   {/* card 2 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIconOther}>
-                      <Image style={styles.iconFeature} source={IconLove} />
+                      <Image style={styles.iconFeature} source={IconSleep} />
                     </View>
                     <Text style={styles.textFeature}>My</Text>
                   </View>
@@ -84,7 +84,7 @@ const Home = ({navigation}) => {
                   {/* card 6 */}
                   <View style={styles.cardFeature}>
                     <View style={styles.wrapIconOther}>
-                      <Image style={styles.iconFeature} source={IconLove} />
+                      <Image style={styles.iconFeature} source={IconAnxious} />
                     </View>
                     <Text style={styles.textFeature}>My</Text>
                   </View>

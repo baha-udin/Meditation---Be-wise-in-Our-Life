@@ -51,11 +51,9 @@ const MusicPlayer = ({navigation}) => {
           {/* bagian play, backwad, forwad */}
           <View style={styles.wrapButtonNavigate}>
             <Image source={IconForwad} style={styles.IconBack} />
-            {onPress ? (
-              <Image source={IconPlay} style={styles.IconPause} />
-            ) : (
-              <Image source={IconPause} style={styles.IconPause} />
-            )}
+
+            <Image source={IconPlay} style={styles.IconPause} />
+
             <Image source={IconForwad} style={styles.IconBack} />
           </View>
           <View style={styles.wrapTimer}>

@@ -46,8 +46,10 @@ import Ornamen from './ornamen.png';
 import BackgroundSplash from './background-splash.png';
 import IlustrastionSplash from './ilustration-splash.png';
 import ImageOnboard from './imageOnboard.png';
+import ImageDownload from './download.png';
 
 export {
+  ImageDownload,
   BackgroundSplash,
   IlustrastionSplash,
   ImageOnboard,
