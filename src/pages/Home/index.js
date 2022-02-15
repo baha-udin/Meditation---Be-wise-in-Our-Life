@@ -9,12 +9,19 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-const cardNight = require('./../../assets/card-night.png');
-const bgImage = require('./../../assets/ornamen.png');
-const bgCard = require('./../../assets/hero-card-background.png');
-const cardSleep = require('./../../assets/card-sleep.png');
-const cardSweet = require('./../../assets/card-sweet.png');
-const cardMoon = require('./../../assets/card-moon.png');
+import {
+  CardNight,
+  Ornamen,
+  HeroCardBackground,
+  CardSleep,
+  CardMoon,
+  IconLock,
+  IconAll,
+  IconLove,
+  IconAnxious,
+  IconSleep,
+  IconKids,
+} from '../../assets/img';
 import Colors from './../../assets/Colors';
 
 const Home = ({navigation}) => {
@@ -22,7 +29,7 @@ const Home = ({navigation}) => {
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <View showsVerticalScrollIndicator vertical>
-          <ImageBackground source={bgImage} style={styles.bgHero}>
+          <ImageBackground source={Ornamen} style={styles.bgHero}>
             {/* bagian isi */}
             <View style={styles.content}>
               <View style={styles.Header}>
@@ -39,7 +46,7 @@ const Home = ({navigation}) => {
                     <View style={styles.wrapIcon}>
                       <Image
                         style={styles.iconFeature}
-                        source={require('./../../assets/icon-all.png')}
+                        source={IconAll}
                       />
                     </View>
                     <Text style={styles.textFeature}>All</Text>
@@ -50,7 +57,7 @@ const Home = ({navigation}) => {
                     <View style={styles.wrapIconOther}>
                       <Image
                         style={styles.iconFeature}
-                        source={require('./../../assets/icon-love.png')}
+                        source={IconLove}
                       />
                     </View>
                     <Text style={styles.textFeature}>My</Text>
@@ -61,7 +68,7 @@ const Home = ({navigation}) => {
                     <View style={styles.wrapIconOther}>
                       <Image
                         style={styles.iconFeature}
-                        source={require('./../../assets/icon-anxious.png')}
+                        source={IconAnxious}
                       />
                     </View>
                     <Text style={styles.textFeature}>Anxious</Text>
@@ -72,7 +79,7 @@ const Home = ({navigation}) => {
                     <View style={styles.wrapIconOther}>
                       <Image
                         style={styles.iconFeature}
-                        source={require('./../../assets/icon-sleep.png')}
+                        source={IconSleep}
                       />
                     </View>
                     <Text style={styles.textFeature}>Sleep</Text>
@@ -83,7 +90,7 @@ const Home = ({navigation}) => {
                     <View style={styles.wrapIconOther}>
                       <Image
                         style={styles.iconFeature}
-                        source={require('./../../assets/icon-kids.png')}
+                        source={IconKids}
                       />
                     </View>
                     <Text style={styles.textFeature}>Kids</Text>
@@ -94,7 +101,7 @@ const Home = ({navigation}) => {
                     <View style={styles.wrapIconOther}>
                       <Image
                         style={styles.iconFeature}
-                        source={require('./../../assets/icon-love.png')}
+                        source={IconLove}
                       />
                     </View>
                     <Text style={styles.textFeature}>My</Text>
@@ -105,7 +112,7 @@ const Home = ({navigation}) => {
                     <View style={styles.wrapIconOther}>
                       <Image
                         style={styles.iconFeature}
-                        source={require('./../../assets/icon-anxious.png')}
+                        source={IconAnxious}
                       />
                     </View>
                     <Text style={styles.textFeature}>Anxious</Text>
@@ -118,12 +125,9 @@ const Home = ({navigation}) => {
 
           {/* Awal card moon */}
           <View style={styles.cardMoon}>
-            <ImageBackground source={bgCard} style={styles.bgCard}>
+            <ImageBackground source={HeroCardBackground} style={styles.bgCard}>
               <View style={styles.wrapCard}>
-                <Image
-                  source={require('./../../assets/icon-lock.png')}
-                  style={styles.iconLock}
-                />
+                <Image source={IconLock} style={styles.iconLock} />
                 <Text style={styles.titleMoon}>The Ocean Moon</Text>
                 <Text style={styles.descMoon}>
                   Non-stop 8- hour mixes of our most popular sleep audio
@@ -143,17 +147,17 @@ const Home = ({navigation}) => {
               </View>
             </TouchableOpacity>
             <View style={styles.card1}>
-              <Image source={cardSleep} style={styles.imgCard} />
+              <Image source={CardSleep} style={styles.imgCard} />
               <Text style={styles.titleCardNight}>Sweet Sleep</Text>
               <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
             </View>
             <View style={styles.card1}>
-              <Image source={cardNight} style={styles.imgCard} />
+              <Image source={CardNight} style={styles.imgCard} />
               <Text style={styles.titleCardNight}>Night Island</Text>
               <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
             </View>
             <View style={styles.card1}>
-              <Image source={cardMoon} style={styles.imgCard} />
+              <Image source={CardMoon} style={styles.imgCard} />
               <Text style={styles.titleCardNight}>Moon Clouds</Text>
               <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
             </View>
@@ -162,22 +166,22 @@ const Home = ({navigation}) => {
           {/* Bagian card bawah 2*/}
           <ScrollView horizontal style={styles.cardPlaylist}>
             <View style={styles.card1}>
-              <Image source={cardNight} style={styles.imgCard} />
+              <Image source={CardNight} style={styles.imgCard} />
               <Text style={styles.titleCardNight}>Night Island</Text>
               <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
             </View>
             <View style={styles.card1}>
-              <Image source={cardSleep} style={styles.imgCard} />
+              <Image source={CardSleep} style={styles.imgCard} />
               <Text style={styles.titleCardNight}>Sweet Sleep</Text>
               <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
             </View>
             <View style={styles.card1}>
-              <Image source={cardNight} style={styles.imgCard} />
+              <Image source={CardNight} style={styles.imgCard} />
               <Text style={styles.titleCardNight}>Night Island</Text>
               <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
             </View>
             <View style={styles.card1}>
-              <Image source={cardMoon} style={styles.imgCard} />
+              <Image source={CardNight} style={styles.imgCard} />
               <Text style={styles.titleCardNight}>Moon Clouds</Text>
               <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
             </View>
