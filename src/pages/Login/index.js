@@ -8,6 +8,7 @@ import {
   TextInput,
   ScrollView,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
 import Colors from '../../assets/Colors';
 import {BgLogin, IconFb, IconGoogle} from '../../assets/img';

@@ -10,33 +10,35 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Colors from '../../assets/Colors';
-
-const cardNight = require('./../../assets/bg-top.png');
-const cardSleep = require('./../../assets/card-sleep.png');
-const iconArrow = require('./../../assets/icon-arrow.png');
-const iconDownload = require('./../../assets/icon-download.png');
-const iconHeadset = require('./../../assets/icon-headset.png');
-const iconsavelove = require('./../../assets/icon-savelove.png');
-const icontinylove = require('./../../assets/icon-tinylove.png');
+import {
+  BgTop,
+  CardNight,
+  CardSleep,
+  IconArrow,
+  IconDownloads,
+  IconHeadset,
+  IconSaveLove,
+  IconTinyLove,
+} from '../../assets/img';
 
 const DetailPage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView vertical style={styles.mainContent}>
         <View style={styles.sectionTop}>
-          <ImageBackground source={cardNight} style={styles.bgTop}>
+          <ImageBackground source={BgTop} style={styles.bgTop}>
             <View style={styles.wrap}>
               <View>
                 <TouchableOpacity
                   onPress={() =>
                     navigation.navigate('BottomNavigation', {screen: 'Home'})
                   }>
-                  <Image source={iconArrow} style={styles.iconTop} />
+                  <Image source={IconArrow} style={styles.iconTop} />
                 </TouchableOpacity>
               </View>
               <View style={styles.rightTop}>
-                <Image source={iconsavelove} style={styles.iconSelfLove} />
-                <Image source={iconDownload} style={styles.iconTop} />
+                <Image source={IconSaveLove} style={styles.iconSelfLove} />
+                <Image source={IconDownloads} style={styles.iconTop} />
               </View>
             </View>
           </ImageBackground>
@@ -57,11 +59,11 @@ const DetailPage = ({navigation}) => {
           </View>
           <View style={styles.engagement}>
             <View style={styles.wrapEngagement}>
-              <Image source={icontinylove} style={styles.iconTiny} />
+              <Image source={IconTinyLove} style={styles.iconTiny} />
               <Text style={styles.descEngagement}>24.234 Favorites</Text>
             </View>
             <View style={styles.wrapEngagementRight}>
-              <Image source={iconHeadset} style={styles.iconTiny} />
+              <Image source={IconHeadset} style={styles.iconTiny} />
               <Text style={styles.descEngagement}>21.764 Listening</Text>
             </View>
           </View>
@@ -74,24 +76,24 @@ const DetailPage = ({navigation}) => {
               {/* Mulai */}
               <View style={styles.cardPlaylist}>
                 <View style={styles.card1}>
-                  <Image source={cardNight} style={styles.imgCard} />
+                  <Image source={CardNight} style={styles.imgCard} />
                   <Text style={styles.titleCardNight}>Night Island</Text>
                   <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
                 </View>
                 <View style={styles.card1}>
-                  <Image source={cardSleep} style={styles.imgCard} />
+                  <Image source={CardSleep} style={styles.imgCard} />
                   <Text style={styles.titleCardNight}>Sweet Sleep</Text>
                   <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
                 </View>
               </View>
               <View style={styles.cardPlaylist2}>
                 <View style={styles.card1}>
-                  <Image source={cardNight} style={styles.imgCard} />
+                  <Image source={CardNight} style={styles.imgCard} />
                   <Text style={styles.titleCardNight}>Night Island</Text>
                   <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
                 </View>
                 <View style={styles.card1}>
-                  <Image source={cardSleep} style={styles.imgCard} />
+                  <Image source={CardSleep} style={styles.imgCard} />
                   <Text style={styles.titleCardNight}>Sweet Sleep</Text>
                   <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
                 </View>

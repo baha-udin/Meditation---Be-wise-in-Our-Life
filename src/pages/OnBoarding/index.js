@@ -1,13 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
 import Colors from '../../assets/Colors';
-import {heroImage} from './../../assets/img';
+import {IlustOnboard} from '../../assets/img';
 
 const OnBoarding = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.wrapImage}>
-        <Image source={heroImage} style={styles.imgHero} />
+        <Image source={IlustOnboard} style={styles.imgHero} />
       </View>
       <View style={styles.wrapText}>
         <Text style={styles.title}>We are what we do</Text>
