@@ -15,10 +15,10 @@ import {
   CardNight,
   CardSleep,
   IconArrow,
-  IconDownloads,
   IconHeadset,
   IconSaveLove,
   IconTinyLove,
+  ImageDownload,
 } from '../../assets/img';
 
 const DetailPage = ({navigation}) => {
@@ -38,7 +38,7 @@ const DetailPage = ({navigation}) => {
               </View>
               <View style={styles.rightTop}>
                 <Image source={IconSaveLove} style={styles.iconSelfLove} />
-                <Image source={IconDownloads} style={styles.iconTop} />
+                <Image source={ImageDownload} style={styles.iconTop} />
               </View>
             </View>
           </ImageBackground>
