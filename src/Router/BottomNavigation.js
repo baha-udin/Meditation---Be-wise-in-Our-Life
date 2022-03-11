@@ -16,6 +16,7 @@ import {
   IconProfileActive,
 } from './..//assets/img';
 import Colors from './../assets/Colors';
+import {ResHeight, ResWidth} from '../utils/responsive';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,13 +32,13 @@ const BottomNavigation = ({navigation}) => {
           position: 'absolute',
           justifyContent: 'center',
           alignItems: 'center',
-          height: 60,
+          height: ResHeight(70),
           width: '100%',
           bottom: 0,
           backgroundColor: Colors.Basic_BG,
           borderTopLeftRadius: 10,
           borderTopRightRadius: 10,
-          paddingVertical: 6,
+
           ...styles.tabBarStyling,
         },
       }}>
@@ -50,19 +51,22 @@ const BottomNavigation = ({navigation}) => {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingVertical: 8,
-                paddingHorizontal: 8,
-                borderRadius: 12,
+                paddingVertical: ResHeight(8),
+                paddingHorizontal: ResWidth(8),
+                borderRadius: 10,
                 backgroundColor: focused ? Colors.BUTTON_BG : Colors.Basic_BG,
               }}>
               <Image
                 source={focused ? IconHomeActive : IconHome}
-                style={{height: 24, opacity: 0.8}}
+                style={{
+                  height: ResWidth(23),
+                  opacity: 0.8,
+                }}
               />
               <Text
                 style={{
-                  fontSize: 12,
-                  marginTop: 4,
+                  fontSize: ResWidth(12),
+                  marginTop: ResHeight(4),
                   color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
@@ -81,19 +85,19 @@ const BottomNavigation = ({navigation}) => {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingVertical: 8,
-                paddingHorizontal: 8,
-                borderRadius: 12,
+                paddingVertical: ResHeight(8),
+                paddingHorizontal: ResWidth(8),
+                borderRadius: 10,
                 backgroundColor: focused ? Colors.BUTTON_BG : Colors.Basic_BG,
               }}>
               <Image
                 source={focused ? IconSleepActive : IconSleep}
-                style={{height: 24, opacity: 0.8}}
+                style={{height: ResWidth(23), opacity: 0.8}}
               />
               <Text
                 style={{
-                  fontSize: 12,
-                  marginTop: 4,
+                  fontSize: ResWidth(12),
+                  marginTop: ResHeight(4),
                   color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
@@ -112,19 +116,19 @@ const BottomNavigation = ({navigation}) => {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingVertical: 8,
-                paddingHorizontal: 8,
-                borderRadius: 12,
+                paddingVertical: ResHeight(8),
+                paddingHorizontal: ResWidth(8),
+                borderRadius: 10,
                 backgroundColor: focused ? Colors.BUTTON_BG : Colors.Basic_BG,
               }}>
               <Image
                 source={focused ? IconMeditateActive : IconMeditate}
-                style={{height: 24, opacity: 0.8}}
+                style={{height: ResWidth(23), opacity: 0.8}}
               />
               <Text
                 style={{
-                  fontSize: 12,
-                  marginTop: 4,
+                  fontSize: ResWidth(12),
+                  marginTop: ResHeight(4),
                   color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
@@ -143,19 +147,23 @@ const BottomNavigation = ({navigation}) => {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingVertical: 8,
-                paddingHorizontal: 8,
-                borderRadius: 12,
+                paddingVertical: ResHeight(8),
+                paddingHorizontal: ResWidth(8),
+                borderRadius: 10,
                 backgroundColor: focused ? Colors.BUTTON_BG : Colors.Basic_BG,
               }}>
               <Image
                 source={focused ? IconMusicActive : IconMusic}
-                style={{height: 24, opacity: 0.8}}
+                style={{
+                  height: ResWidth(23),
+                  opacity: 0.8,
+                  width: ResWidth(28),
+                }}
               />
               <Text
                 style={{
-                  fontSize: 12,
-                  marginTop: 4,
+                  fontSize: ResWidth(12),
+                  marginTop: ResHeight(4),
                   color: focused ? Colors.FontColor : Colors.InActiveMenu,
                   opacity: focused ? 1 : 0.6,
                 }}>
@@ -174,14 +182,14 @@ const BottomNavigation = ({navigation}) => {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingVertical: 8,
-                paddingHorizontal: 8,
-                borderRadius: 12,
+                paddingVertical: ResHeight(8),
+                paddingHorizontal: ResWidth(8),
+                borderRadius: 10,
                 backgroundColor: focused ? Colors.BUTTON_BG : Colors.Basic_BG,
               }}>
               <Image
                 source={focused ? IconProfileActive : IconProfile}
-                style={{height: 24, opacity: 0.8}}
+                style={{height: ResWidth(23), opacity: 0.8}}
               />
               <Text
                 style={{
