@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
 import Colors from '../../assets/Colors';
 import {ImageOnboard} from '../../assets/img';
+import {ResWidth, ResHeight} from './../../utils/responsive';
 
 const OnBoarding = ({navigation}) => {
   return (
@@ -43,32 +44,32 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   wrapImage: {
-    marginHorizontal: '10%',
+    paddingHorizontal: '20%',
     marginTop: '40%',
   },
   heroImage: {
-    marginTop: '20%',
-    width: '10%',
-    resizeMode: 'contain',
+    width: ResWidth(200),
+    height: 'auto',
+    resizeMode: 'center',
   },
   wrapText: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '20%',
+    marginTop: ResHeight(40),
     paddingHorizontal: '10%',
   },
   title: {
     textAlign: 'center',
-    fontSize: 28,
+    fontSize: ResWidth(24),
     fontWeight: 'bold',
     fontFamily: 'Poppins-700',
     color: Colors.FontColor,
-    letterSpacing: 0.5,
+    letterSpacing: 0.4,
   },
   description: {
-    marginTop: '4%',
+    marginTop: ResHeight(16),
     textAlign: 'center',
-    fontSize: 15,
+    fontSize: ResWidth(15),
     fontFamily: 'Poppins-Light',
     color: Colors.FontColor,
     letterSpacing: 0.8,
@@ -76,8 +77,8 @@ const styles = StyleSheet.create({
   wrapBtn: {
     marginTop: '10%',
     backgroundColor: Colors.BUTTON_BG,
-    paddingHorizontal: '20%',
-    paddingVertical: '4%',
+    paddingHorizontal: ResWidth(20),
+    paddingVertical: ResHeight(12),
     borderRadius: 30,
     width: '80%',
   },

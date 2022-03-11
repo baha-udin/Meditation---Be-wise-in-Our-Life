@@ -12,7 +12,7 @@ const Splash = ({navigation}) => {
     setTimeout(() => {
       navigation.replace('OnBoarding');
     }, 6000);
-  }, [navigation]);
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -30,7 +30,7 @@ const Splash = ({navigation}) => {
         </View>
         <View style={styles.sectionBottom}>
           <Text style={styles.ctaStarted}>GET STARTED</Text>
-          <View style={styles.lineBottom}></View>
+          <View style={styles.lineBottom}/>
         </View>
       </ImageBackground>
     </View>

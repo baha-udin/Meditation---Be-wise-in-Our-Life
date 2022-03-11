@@ -12,6 +12,9 @@ import {
 } from 'react-native';
 import Colors from '../../assets/Colors';
 import {BgLogin, IconFb, IconGoogle} from '../../assets/img';
+import InputPrimary from '../../components/InputPrimary';
+import Gap from '../../components/Atoms/Gap';
+import {ResHeight, ResWidth} from '../../utils/responsive';
 
 const Login = ({navigation}) => {
   return (
@@ -35,16 +38,13 @@ const Login = ({navigation}) => {
       <ScrollView>
         <View style={styles.wrapLoginEmail}>
           <Text style={styles.optionLogin}>Or Login with Email</Text>
-          <View style={styles.wrapInputEmail}>
+          <Gap height={30} />
+          {/* <View style={styles.wrapInputEmail}>
             <TextInput placeholder="Email Address" style={styles.inputEmail} />
-          </View>
-          <View style={styles.wrapInputPassword}>
-            <TextInput
-              placeholder="password"
-              secureTextEntry={true}
-              style={styles.inputPassword}
-            />
-          </View>
+          </View> */}
+          <InputPrimary placeholder="Input your email" />
+          <Gap height={16} />
+          <InputPrimary placeholder="Password" />
         </View>
         <TouchableOpacity
           onPress={() =>
@@ -60,11 +60,11 @@ const Login = ({navigation}) => {
         </TouchableOpacity>
       </ScrollView>
       <View style={styles.wrapSignUp}>
-        <Text style={styles.textHaveAccount}>ALREADY HAVE AN ACCOUNT?</Text>
+        <Text style={styles.textHaveAccount}>Don't have an account?</Text>
         <TouchableOpacity
           style={styles.ctaSignUp}
           onPress={() => navigation.navigate('Register')}>
-          <Text style={styles.textCtaSignUp}>SIGN UP</Text>
+          <Text style={styles.textCtaSignUp}>Register here</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   },
   wrapFb: {
     backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: 16,
+    paddingVertical: ResHeight(10),
     paddingHorizontal: '8%',
     flexDirection: 'row',
     borderRadius: 30,
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     marginTop: '4%',
     borderWidth: 1,
     borderColor: Colors.WHITE,
-    paddingVertical: 16,
+    paddingVertical: ResHeight(10),
     paddingHorizontal: '8%',
     flexDirection: 'row',
     borderRadius: 30,
@@ -120,13 +120,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   IconImg: {
-    height: 24,
+    height: ResHeight(24),
   },
   textLogin: {
     textAlign: 'center',
     color: Colors.WHITE,
     fontFamily: 'Poppins-Medium',
-    fontSize: 14,
+    fontSize: ResWidth(14),
     letterSpacing: 0.5,
   },
   wrapLoginEmail: {
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   },
   optionLogin: {
     color: Colors.FontColor,
-    fontSize: 15,
+    fontSize: ResWidth(15),
     textAlign: 'center',
     letterSpacing: 0.4,
     fontFamily: 'Poppins-Light',
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     marginTop: '8%',
     marginHorizontal: '10%',
     backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: 16,
+    paddingVertical: ResHeight(12),
     flexDirection: 'row',
     borderRadius: 30,
     width: '80%',

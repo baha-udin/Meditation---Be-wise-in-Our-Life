@@ -9,15 +9,14 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
+import {ResWidth, ResHeight} from './../../utils/responsive';
 import Colors from '../../assets/Colors';
 import {BgLogin, IconFb, IconGoogle} from '../../assets/img';
 import InputPrimary from '../../components/InputPrimary';
 import ButtonPrimary from '../../components/ButtonPrimary';
+import Gap from './../../components/Atoms/Gap';
 
 const Register = ({navigation}) => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
-
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -26,37 +25,33 @@ const Register = ({navigation}) => {
             <Text style={styles.titlePage}>Create Your Account</Text>
             {/* wrap Login FB & Google */}
             <View style={styles.wrapLoginThirdparty}>
-              <View style={styles.wrapFb}>
-                <Image source={IconFb} style={styles.IconImg} />
-                <Text style={styles.textLogin}>CONTINUE WITH Facebook</Text>
-              </View>
-              <View style={styles.wrapGoogle}>
-                <Image source={IconGoogle} style={styles.IconImg} />
-                <Text style={styles.textLogin}>CONTINUE WITH GOOGLE</Text>
-              </View>
+              <TouchableOpacity>
+                <View style={styles.wrapFb}>
+                  <Image source={IconFb} style={styles.IconImg} />
+                  <Text style={styles.textLogin}>CONTINUE WITH Facebook</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.wrapGoogle}>
+                  <Image source={IconGoogle} style={styles.IconImg} />
+                  <Text style={styles.textLogin}>CONTINUE WITH GOOGLE</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
         </ImageBackground>
+        {/* Section Input Data Register */}
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.wrapLoginEmail}>
             <Text style={styles.optionLogin}>Or Login with Email</Text>
+            <Gap height={20} />
             <InputPrimary placeholder="Full Name" />
+            <Gap height={12} />
             <InputPrimary placeholder="Email" />
+            <Gap height={12} />
             <InputPrimary placeholder="Password" secureTextEntry={true} />
           </View>
-          {/* section checkbox agreement */}
-
-          <View style={styles.wrapAgreement}>
-            <Text style={styles.titleAgreement}>
-              I have read the Private Policy
-            </Text>
-            <CheckBox
-              value={toggleCheckBox}
-              onValueChange={value => setToggleCheckBox(value)}
-              style={styles.checkbox}
-              tintColors={{true: 'white', false: Colors.WHITE}}
-            />
-          </View>
+          {/* Button Submit */}
           <TouchableOpacity
             onPress={() =>
               navigation.navigate('BottomNavigation', {screen: 'Home'})
@@ -67,6 +62,14 @@ const Register = ({navigation}) => {
           </TouchableOpacity>
         </ScrollView>
       </ScrollView>
+      <View style={styles.wrapSignUp}>
+        <Text style={styles.textHaveAccount}>Already have an account?</Text>
+        <TouchableOpacity
+          style={styles.ctaSignUp}
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.textCtaSignUp}>Login here</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
     height: '100%',
     flex: 1,
     justifyContent: 'flex-start',
-    paddingBottom: 8,
+    paddingBottom: ResHeight(8),
   },
   sectionHeader: {
     paddingTop: '22%',
@@ -92,7 +95,7 @@ const styles = StyleSheet.create({
   titlePage: {
     textAlign: 'center',
     color: Colors.WHITE,
-    fontSize: 28,
+    fontSize: ResWidth(28),
     fontFamily: 'Poppins-SemiBold',
   },
   wrapLoginThirdparty: {
@@ -102,7 +105,7 @@ const styles = StyleSheet.create({
   },
   wrapFb: {
     backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: 12,
+    paddingVertical: ResHeight(12),
     paddingHorizontal: '8%',
     flexDirection: 'row',
     borderRadius: 30,
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
     marginTop: '4%',
     borderWidth: 1,
     borderColor: Colors.WHITE,
-    paddingVertical: 12,
+    paddingVertical: ResHeight(12),
     paddingHorizontal: '8%',
     flexDirection: 'row',
     borderRadius: 30,
@@ -121,22 +124,23 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   IconImg: {
-    height: 24,
+    height: ResWidth(24),
+    resizeMode: 'contain',
   },
   textLogin: {
     textAlign: 'center',
     color: Colors.WHITE,
     fontFamily: 'Poppins-Medium',
-    fontSize: 14,
+    fontSize: ResWidth(14),
     letterSpacing: 0.5,
   },
   wrapLoginEmail: {
     paddingHorizontal: '10%',
-    marginTop: '8%',
+    marginTop: ResHeight(30),
   },
   optionLogin: {
     color: Colors.FontColor,
-    fontSize: 15,
+    fontSize: ResWidth(14),
     textAlign: 'center',
     letterSpacing: 0.4,
     fontFamily: 'Poppins-Light',
@@ -167,10 +171,10 @@ const styles = StyleSheet.create({
     outlineStyle: 'none',
   },
   wrapCTA: {
-    marginTop: '4%',
+    marginTop: ResHeight(30),
     marginHorizontal: '10%',
     backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: 12,
+    paddingVertical: ResHeight(12),
     flexDirection: 'row',
     borderRadius: 30,
     width: '80%',
@@ -179,12 +183,7 @@ const styles = StyleSheet.create({
   wrapCtaForget: {
     marginTop: '4%',
   },
-  forgetPassword: {
-    textAlign: 'center',
-    color: 'white',
-    fontSize: 13,
-    letterSpacing: 0.8,
-  },
+
   wrapSignUp: {
     flexDirection: 'row',
     alignItems: 'center',

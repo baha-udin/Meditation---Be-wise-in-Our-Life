@@ -13,7 +13,6 @@ import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
   return (
-    // <Splash />
     <NavigationContainer>
       <Router />
     </NavigationContainer>
