@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Dimensions} from 'react-native';
 
 const baseWidth = 360;
-const baseHeight = 800;
+const baseHeight = 640;
 
 export const ResWidth = width => {
   return (Dimensions.get('window').width * width) / baseWidth;

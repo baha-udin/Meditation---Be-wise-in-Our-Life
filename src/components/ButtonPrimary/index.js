@@ -1,13 +1,20 @@
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Platform,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import Colors from '../../assets/Colors';
+import {ResHeight, ResWidth} from '../../utils/responsive';
 
 const ButtonPrimary = props => {
   return (
     <TouchableOpacity onPress={props.onPress}>
       <View style={styles.wrapFb}>
-        <Image source={props.ImageSource} style={styles.IconImg} />
-        <Text style={styles.textLogin}>{props.titleButton}</Text>
+        <Text style={props.titleStyle}>{props.titleButton}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -18,21 +25,20 @@ export default ButtonPrimary;
 const styles = StyleSheet.create({
   wrapFb: {
     backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: 12,
-    paddingHorizontal: '8%',
+    paddingVertical: ResHeight(12),
+    paddingHorizontal: ResHeight(25),
     flexDirection: 'row',
     borderRadius: 30,
-    width: '80%',
-    justifyContent: 'space-evenly',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  IconImg: {
-    height: 24,
-  },
+
   textLogin: {
     textAlign: 'center',
     color: Colors.WHITE,
-    fontFamily: 'Poppins-Medium',
-    fontSize: 14,
-    letterSpacing: 0.5,
+    fontSize: ResHeight(15),
+    letterSpacing: 1,
+    fontWeight: '400',
   },
 });

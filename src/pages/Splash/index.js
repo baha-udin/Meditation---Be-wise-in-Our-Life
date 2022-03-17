@@ -6,6 +6,7 @@ import {
   IlustrastionSplash,
 } from '../../assets/img';
 import Colors from './../../assets/Colors';
+import Fonts from './../../assets/fonts';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
@@ -30,7 +31,7 @@ const Splash = ({navigation}) => {
         </View>
         <View style={styles.sectionBottom}>
           <Text style={styles.ctaStarted}>GET STARTED</Text>
-          <View style={styles.lineBottom}/>
+          <View style={styles.lineBottom} />
         </View>
       </ImageBackground>
     </View>

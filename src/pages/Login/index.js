@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   ImageBackground,
   StyleSheet,
@@ -9,14 +9,42 @@ import {
   ScrollView,
   TouchableOpacity,
   KeyboardAvoidingView,
+  Alert,
 } from 'react-native';
 import Colors from '../../assets/Colors';
 import {BgLogin, IconFb, IconGoogle} from '../../assets/img';
-import InputPrimary from '../../components/InputPrimary';
+import {
+  InputPrimary,
+  ButtonPrimary,
+  ButtonThirdParty,
+} from './../../components';
 import Gap from '../../components/Atoms/Gap';
 import {ResHeight, ResWidth} from '../../utils/responsive';
+import {Fire} from '../../config';
 
 const Login = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [validate, setValidate] = useState('Data masih ada yang kosong');
+
+  const handlLogin = () => {
+    if (email == '' || password == '') {
+      Alert.alert(validate);
+    } else {
+      Fire.auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(success => {
+          console.log('berhasil login', success);
+        })
+        .then(() => navigation.navigate('BottomNavigation', {screen: 'Home'}))
+        .catch(error => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log('error register', errorMessage);
+        });
+    }
+  };
+
   return (
     <View style={styles.container}>
       <ImageBackground source={BgLogin} style={styles.BgImg}>
@@ -24,14 +52,9 @@ const Login = ({navigation}) => {
           <Text style={styles.titlePage}>Welcome Back!</Text>
           {/* wrap Login FB & Google */}
           <View style={styles.wrapLoginThirdparty}>
-            <View style={styles.wrapFb}>
-              <Image source={IconFb} style={styles.IconImg} />
-              <Text style={styles.textLogin}>CONTINUE WITH Facebook</Text>
-            </View>
-            <View style={styles.wrapGoogle}>
-              <Image source={IconGoogle} style={styles.IconImg} />
-              <Text style={styles.textLogin}>CONTINUE WITH GOOGLE</Text>
-            </View>
+            <ButtonThirdParty Image={IconFb} title="Continue with Facebook" />
+            <Gap height={ResHeight(16)} />
+            <ButtonThirdParty Image={IconGoogle} title="Continue with Google" />
           </View>
         </View>
       </ImageBackground>
@@ -39,21 +62,27 @@ const Login = ({navigation}) => {
         <View style={styles.wrapLoginEmail}>
           <Text style={styles.optionLogin}>Or Login with Email</Text>
           <Gap height={30} />
-          {/* <View style={styles.wrapInputEmail}>
-            <TextInput placeholder="Email Address" style={styles.inputEmail} />
-          </View> */}
-          <InputPrimary placeholder="Input your email" />
+          <InputPrimary
+            placeholder="Input your email"
+            onChangeText={value => setEmail(value)}
+            value={email}
+          />
           <Gap height={16} />
-          <InputPrimary placeholder="Password" />
+          <InputPrimary
+            placeholder="Password"
+            onChangeText={value => setPassword(value)}
+            value={password}
+            secureTextEntry={true}
+          />
         </View>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate('BottomNavigation', {screen: 'Home'})
-          }>
-          <View style={styles.wrapCTA}>
-            <Text style={styles.textLogin}>LOG IN</Text>
-          </View>
-        </TouchableOpacity>
+        <Gap height={ResHeight(24)} />
+        <View style={{paddingHorizontal: '10%'}}>
+          <ButtonPrimary
+            onPress={handlLogin}
+            titleButton="Login"
+            titleStyle={styles.CTAStyle}
+          />
+        </View>
         {/* Section Forgot Password */}
         <TouchableOpacity style={styles.wrapCtaForget}>
           <Text style={styles.forgetPassword}>Forgot Password?</Text>
@@ -74,6 +103,12 @@ const Login = ({navigation}) => {
 export default Login;
 
 const styles = StyleSheet.create({
+  CTAStyle: {
+    color: 'white',
+    fontSize: ResWidth(16),
+    fontWeight: '600',
+    letterSpacing: 0.7,
+  },
   container: {
     backgroundColor: Colors.Basic_BG,
     width: '100%',
@@ -82,7 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   sectionHeader: {
-    paddingTop: '22%',
+    paddingTop: '25%',
   },
   BgImg: {
     resizeMode: 'contain',
@@ -92,40 +127,21 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: Colors.WHITE,
     fontSize: 28,
-    fontFamily: 'Poppins-SemiBold',
   },
   wrapLoginThirdparty: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '5%',
-  },
-  wrapFb: {
-    backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: ResHeight(10),
-    paddingHorizontal: '8%',
-    flexDirection: 'row',
-    borderRadius: 30,
-    width: '80%',
-    justifyContent: 'space-evenly',
-  },
-  wrapGoogle: {
-    marginTop: '4%',
-    borderWidth: 1,
-    borderColor: Colors.WHITE,
-    paddingVertical: ResHeight(10),
-    paddingHorizontal: '8%',
-    flexDirection: 'row',
-    borderRadius: 30,
-    width: '80%',
-    justifyContent: 'space-evenly',
+    marginTop: ResHeight(60),
   },
   IconImg: {
     height: ResHeight(24),
+    width: ResWidth(26),
+    resizeMode: 'contain',
   },
   textLogin: {
     textAlign: 'center',
     color: Colors.WHITE,
-    fontFamily: 'Poppins-Medium',
+    marginLeft: ResWidth(20),
     fontSize: ResWidth(14),
     letterSpacing: 0.5,
   },
@@ -138,7 +154,6 @@ const styles = StyleSheet.create({
     fontSize: ResWidth(15),
     textAlign: 'center',
     letterSpacing: 0.4,
-    fontFamily: 'Poppins-Light',
   },
   wrapInputEmail: {
     marginTop: '10%',
@@ -191,7 +206,7 @@ const styles = StyleSheet.create({
   textHaveAccount: {
     textAlign: 'center',
     color: 'white',
-    fontFamily: 'Poppins-Regular',
+
     letterSpacing: 0.6,
     fontSize: 14,
     marginVertical: '5%',
@@ -202,7 +217,7 @@ const styles = StyleSheet.create({
   textCtaSignUp: {
     color: 'white',
     fontSize: 14,
-    fontFamily: 'Poppins-Regular',
+
     letterSpacing: 0.6,
   },
 });
