@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   wrapImage: {
     paddingHorizontal: '20%',
-    marginTop: '40%',
+    marginTop: '30%',
   },
   heroImage: {
     width: ResWidth(200),
@@ -55,14 +55,13 @@ const styles = StyleSheet.create({
   wrapText: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: ResHeight(40),
+    marginTop: ResHeight(60),
     paddingHorizontal: '10%',
   },
   title: {
     textAlign: 'center',
     fontSize: ResWidth(24),
     fontWeight: 'bold',
-    fontFamily: 'Poppins-700',
     color: Colors.FontColor,
     letterSpacing: 0.4,
   },
@@ -70,12 +69,11 @@ const styles = StyleSheet.create({
     marginTop: ResHeight(16),
     textAlign: 'center',
     fontSize: ResWidth(15),
-    fontFamily: 'Poppins-Light',
     color: Colors.FontColor,
     letterSpacing: 0.8,
   },
   wrapBtn: {
-    marginTop: '10%',
+    marginTop: ResHeight(80),
     backgroundColor: Colors.BUTTON_BG,
     paddingHorizontal: ResWidth(20),
     paddingVertical: ResHeight(12),
@@ -85,12 +83,11 @@ const styles = StyleSheet.create({
   textBtn: {
     textAlign: 'center',
     fontSize: 16,
-    fontFamily: 'Poppins-Medium',
     color: Colors.FontColor,
     letterSpacing: 0.5,
   },
   wrapLogin: {
-    marginTop: '4%',
+    marginTop: ResHeight(20),
     flexDirection: 'row',
     marginHorizontal: '20%',
     justifyContent: 'center',

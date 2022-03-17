@@ -8,6 +8,8 @@ import {
   ImageBackground,
   Button,
   TouchableOpacity,
+  SafeAreaView,
+  StatusBar,
 } from 'react-native';
 import {
   CardNight,
@@ -26,148 +28,163 @@ import Colors from './../../assets/Colors';
 
 const Home = ({navigation}) => {
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.container}>
-        <View showsVerticalScrollIndicator vertical>
-          <ImageBackground source={Ornamen} style={styles.bgHero}>
-            {/* bagian isi */}
-            <View style={styles.content}>
-              <View style={styles.Header}>
-                <Text style={styles.titleHeader}>Sleep Stories</Text>
-                <Text style={styles.descHeader}>
-                  Shoothing bedtime stories to help you fall into a deep and
-                  natural sleep
-                </Text>
-              </View>
-              <ScrollView horizontal>
-                <View style={styles.feature}>
-                  {/* card 1 */}
-                  <View style={styles.cardFeature}>
-                    <View style={styles.wrapIcon}>
-                      <Image style={styles.iconFeature} source={IconAll} />
-                    </View>
-                    <Text style={styles.textFeature}>All</Text>
-                  </View>
-
-                  {/* card 2 */}
-                  <View style={styles.cardFeature}>
-                    <View style={styles.wrapIconOther}>
-                      <Image style={styles.iconFeature} source={IconSleep} />
-                    </View>
-                    <Text style={styles.textFeature}>My</Text>
-                  </View>
-
-                  {/* card 3 */}
-                  <View style={styles.cardFeature}>
-                    <View style={styles.wrapIconOther}>
-                      <Image style={styles.iconFeature} source={IconAnxious} />
-                    </View>
-                    <Text style={styles.textFeature}>Anxious</Text>
-                  </View>
-
-                  {/* card 4 */}
-                  <View style={styles.cardFeature}>
-                    <View style={styles.wrapIconOther}>
-                      <Image style={styles.iconFeature} source={IconSleep} />
-                    </View>
-                    <Text style={styles.textFeature}>Sleep</Text>
-                  </View>
-
-                  {/* card 5 */}
-                  <View style={styles.cardFeature}>
-                    <View style={styles.wrapIconOther}>
-                      <Image style={styles.iconFeature} source={IconKids} />
-                    </View>
-                    <Text style={styles.textFeature}>Kids</Text>
-                  </View>
-
-                  {/* card 6 */}
-                  <View style={styles.cardFeature}>
-                    <View style={styles.wrapIconOther}>
-                      <Image style={styles.iconFeature} source={IconAnxious} />
-                    </View>
-                    <Text style={styles.textFeature}>My</Text>
-                  </View>
-
-                  {/* card 7 */}
-                  <View style={styles.cardFeature}>
-                    <View style={styles.wrapIconOther}>
-                      <Image style={styles.iconFeature} source={IconAnxious} />
-                    </View>
-                    <Text style={styles.textFeature}>Anxious</Text>
-                  </View>
+    <SafeAreaView style={{backgroundColor: Colors.Basic_BG}}>
+      <StatusBar StatusBarStyle="dark-content" />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <View showsVerticalScrollIndicator vertical>
+            <ImageBackground source={Ornamen} style={styles.bgHero}>
+              {/* bagian isi */}
+              <View style={styles.content}>
+                <View style={styles.Header}>
+                  <Text style={styles.titleHeader}>Sleep Stories</Text>
+                  <Text style={styles.descHeader}>
+                    Shoothing bedtime stories to help you fall into a deep and
+                    natural sleep
+                  </Text>
                 </View>
-              </ScrollView>
-            </View>
-          </ImageBackground>
-          {/* Akhir isi */}
+                <ScrollView horizontal>
+                  <View style={styles.feature}>
+                    {/* card 1 */}
+                    <View style={styles.cardFeature}>
+                      <View style={styles.wrapIcon}>
+                        <Image style={styles.iconFeature} source={IconAll} />
+                      </View>
+                      <Text style={styles.textFeature}>All</Text>
+                    </View>
 
-          {/* Awal card moon */}
-          <View style={styles.cardMoon}>
-            <ImageBackground source={HeroCardBackground} style={styles.bgCard}>
-              <View style={styles.wrapCard}>
-                <Image source={IconLock} style={styles.iconLock} />
-                <Text style={styles.titleMoon}>The Ocean Moon</Text>
-                <Text style={styles.descMoon}>
-                  Non-stop 8- hour mixes of our most popular sleep audio
-                </Text>
-                <Text style={styles.ctaStart}>START</Text>
+                    {/* card 2 */}
+                    <View style={styles.cardFeature}>
+                      <View style={styles.wrapIconOther}>
+                        <Image style={styles.iconFeature} source={IconSleep} />
+                      </View>
+                      <Text style={styles.textFeature}>My</Text>
+                    </View>
+
+                    {/* card 3 */}
+                    <View style={styles.cardFeature}>
+                      <View style={styles.wrapIconOther}>
+                        <Image
+                          style={styles.iconFeature}
+                          source={IconAnxious}
+                        />
+                      </View>
+                      <Text style={styles.textFeature}>Anxious</Text>
+                    </View>
+
+                    {/* card 4 */}
+                    <View style={styles.cardFeature}>
+                      <View style={styles.wrapIconOther}>
+                        <Image style={styles.iconFeature} source={IconSleep} />
+                      </View>
+                      <Text style={styles.textFeature}>Sleep</Text>
+                    </View>
+
+                    {/* card 5 */}
+                    <View style={styles.cardFeature}>
+                      <View style={styles.wrapIconOther}>
+                        <Image style={styles.iconFeature} source={IconKids} />
+                      </View>
+                      <Text style={styles.textFeature}>Kids</Text>
+                    </View>
+
+                    {/* card 6 */}
+                    <View style={styles.cardFeature}>
+                      <View style={styles.wrapIconOther}>
+                        <Image
+                          style={styles.iconFeature}
+                          source={IconAnxious}
+                        />
+                      </View>
+                      <Text style={styles.textFeature}>My</Text>
+                    </View>
+
+                    {/* card 7 */}
+                    <View style={styles.cardFeature}>
+                      <View style={styles.wrapIconOther}>
+                        <Image
+                          style={styles.iconFeature}
+                          source={IconAnxious}
+                        />
+                      </View>
+                      <Text style={styles.textFeature}>Anxious</Text>
+                    </View>
+                  </View>
+                </ScrollView>
               </View>
             </ImageBackground>
-          </View>
+            {/* Akhir isi */}
 
-          {/* Bagian card bawah 1*/}
-          <ScrollView horizontal style={styles.cardPlaylist}>
-            <TouchableOpacity onPress={() => navigation.navigate('DetailPage')}>
+            {/* Awal card moon */}
+            <View style={styles.cardMoon}>
+              <ImageBackground
+                source={HeroCardBackground}
+                style={styles.bgCard}>
+                <View style={styles.wrapCard}>
+                  <Image source={IconLock} style={styles.iconLock} />
+                  <Text style={styles.titleMoon}>The Ocean Moon</Text>
+                  <Text style={styles.descMoon}>
+                    Non-stop 8- hour mixes of our most popular sleep audio
+                  </Text>
+                  <Text style={styles.ctaStart}>START</Text>
+                </View>
+              </ImageBackground>
+            </View>
+
+            {/* Bagian card bawah 1*/}
+            <ScrollView horizontal style={styles.cardPlaylist}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('DetailPage')}>
+                <View style={styles.card1}>
+                  <Image source={CardNight} style={styles.imgCard} />
+                  <Text style={styles.titleCardNight}>Night Island</Text>
+                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+                </View>
+              </TouchableOpacity>
+              <View style={styles.card1}>
+                <Image source={CardSleep} style={styles.imgCard} />
+                <Text style={styles.titleCardNight}>Sweet Sleep</Text>
+                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+              </View>
               <View style={styles.card1}>
                 <Image source={CardNight} style={styles.imgCard} />
                 <Text style={styles.titleCardNight}>Night Island</Text>
                 <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
               </View>
-            </TouchableOpacity>
-            <View style={styles.card1}>
-              <Image source={CardSleep} style={styles.imgCard} />
-              <Text style={styles.titleCardNight}>Sweet Sleep</Text>
-              <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-            </View>
-            <View style={styles.card1}>
-              <Image source={CardNight} style={styles.imgCard} />
-              <Text style={styles.titleCardNight}>Night Island</Text>
-              <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-            </View>
-            <View style={styles.card1}>
-              <Image source={CardMoon} style={styles.imgCard} />
-              <Text style={styles.titleCardNight}>Moon Clouds</Text>
-              <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-            </View>
-          </ScrollView>
+              <View style={styles.card1}>
+                <Image source={CardMoon} style={styles.imgCard} />
+                <Text style={styles.titleCardNight}>Moon Clouds</Text>
+                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+              </View>
+            </ScrollView>
 
-          {/* Bagian card bawah 2*/}
-          <ScrollView horizontal style={styles.cardPlaylist}>
-            <View style={styles.card1}>
-              <Image source={CardNight} style={styles.imgCard} />
-              <Text style={styles.titleCardNight}>Night Island</Text>
-              <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-            </View>
-            <View style={styles.card1}>
-              <Image source={CardSleep} style={styles.imgCard} />
-              <Text style={styles.titleCardNight}>Sweet Sleep</Text>
-              <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-            </View>
-            <View style={styles.card1}>
-              <Image source={CardNight} style={styles.imgCard} />
-              <Text style={styles.titleCardNight}>Night Island</Text>
-              <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-            </View>
-            <View style={styles.card1}>
-              <Image source={CardNight} style={styles.imgCard} />
-              <Text style={styles.titleCardNight}>Moon Clouds</Text>
-              <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-            </View>
-          </ScrollView>
+            {/* Bagian card bawah 2*/}
+            <ScrollView horizontal style={styles.cardPlaylist}>
+              <View style={styles.card1}>
+                <Image source={CardNight} style={styles.imgCard} />
+                <Text style={styles.titleCardNight}>Night Island</Text>
+                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+              </View>
+              <View style={styles.card1}>
+                <Image source={CardSleep} style={styles.imgCard} />
+                <Text style={styles.titleCardNight}>Sweet Sleep</Text>
+                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+              </View>
+              <View style={styles.card1}>
+                <Image source={CardNight} style={styles.imgCard} />
+                <Text style={styles.titleCardNight}>Night Island</Text>
+                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+              </View>
+              <View style={styles.card1}>
+                <Image source={CardNight} style={styles.imgCard} />
+                <Text style={styles.titleCardNight}>Moon Clouds</Text>
+                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
+              </View>
+            </ScrollView>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -202,7 +219,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    fontFamily: 'Poppins',
   },
   descHeader: {
     marginTop: 8,

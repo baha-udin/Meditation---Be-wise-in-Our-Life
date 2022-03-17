@@ -8,6 +8,8 @@ import {
   TextInput,
   ScrollView,
   TouchableOpacity,
+  Alert,
+  SafeAreaView,
 } from 'react-native';
 import {ResWidth, ResHeight} from './../../utils/responsive';
 import Colors from '../../assets/Colors';
@@ -15,8 +17,32 @@ import {BgLogin, IconFb, IconGoogle} from '../../assets/img';
 import InputPrimary from '../../components/InputPrimary';
 import ButtonPrimary from '../../components/ButtonPrimary';
 import Gap from './../../components/Atoms/Gap';
+import {Fire} from './../../config';
+import ButtonThirdParty from '../../components/ButtonThirdParty';
 
 const Register = ({navigation}) => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [validate, setValidate] = useState('Data masih ada yang kosong');
+
+  const handleRegister = () => {
+    if ((fullName == '' || email == '', password == '')) {
+      Alert.alert(validate);
+    } else {
+      Fire.auth()
+        .createUserWithEmailAndPassword(email.trim(), password)
+        .then(success => {
+          console.log('berhasil login', success);
+        })
+        .then(() => navigation.navigate('BottomNavigation', {screen: 'Home'}))
+        .catch(error => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log('error register', errorMessage);
+        });
+    }
+  };
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -26,16 +52,19 @@ const Register = ({navigation}) => {
             {/* wrap Login FB & Google */}
             <View style={styles.wrapLoginThirdparty}>
               <TouchableOpacity>
-                <View style={styles.wrapFb}>
-                  <Image source={IconFb} style={styles.IconImg} />
-                  <Text style={styles.textLogin}>CONTINUE WITH Facebook</Text>
-                </View>
+                <ButtonThirdParty
+                  Image={IconFb}
+                  title="Continue With Facebook"
+                  titleStyle={styles.CTAStyle}
+                />
               </TouchableOpacity>
+              <Gap height={ResHeight(12)} />
               <TouchableOpacity>
-                <View style={styles.wrapGoogle}>
-                  <Image source={IconGoogle} style={styles.IconImg} />
-                  <Text style={styles.textLogin}>CONTINUE WITH GOOGLE</Text>
-                </View>
+                <ButtonThirdParty
+                  Image={IconGoogle}
+                  title="Continue With Facebook"
+                  titleStyle={styles.CTAStyle}
+                />
               </TouchableOpacity>
             </View>
           </View>
@@ -45,21 +74,33 @@ const Register = ({navigation}) => {
           <View style={styles.wrapLoginEmail}>
             <Text style={styles.optionLogin}>Or Login with Email</Text>
             <Gap height={20} />
-            <InputPrimary placeholder="Full Name" />
+            <InputPrimary
+              placeholder="Full Name"
+              value={fullName}
+              onChangeText={value => setFullName(value)}
+            />
             <Gap height={12} />
-            <InputPrimary placeholder="Email" />
+            <InputPrimary
+              placeholder="Email"
+              value={email}
+              onChangeText={value => setEmail(value)}
+            />
             <Gap height={12} />
-            <InputPrimary placeholder="Password" secureTextEntry={true} />
+            <InputPrimary
+              placeholder="Password"
+              onChangeText={value => setPassword(value)}
+              value={password}
+              secureTextEntry={true}
+            />
           </View>
           {/* Button Submit */}
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate('BottomNavigation', {screen: 'Home'})
-            }>
-            <View style={styles.wrapCTA}>
-              <Text style={styles.textLogin}>Register</Text>
-            </View>
-          </TouchableOpacity>
+          <View style={styles.wrapCTA}>
+            <ButtonPrimary
+              onPress={handleRegister}
+              titleButton="Register"
+              titleStyle={styles.titleRegister}
+            />
+          </View>
         </ScrollView>
       </ScrollView>
       <View style={styles.wrapSignUp}>
@@ -96,32 +137,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: Colors.WHITE,
     fontSize: ResWidth(28),
-    fontFamily: 'Poppins-SemiBold',
   },
   wrapLoginThirdparty: {
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '5%',
-  },
-  wrapFb: {
-    backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: ResHeight(12),
-    paddingHorizontal: '8%',
-    flexDirection: 'row',
-    borderRadius: 30,
-    width: '80%',
-    justifyContent: 'space-evenly',
-  },
-  wrapGoogle: {
-    marginTop: '4%',
-    borderWidth: 1,
-    borderColor: Colors.WHITE,
-    paddingVertical: ResHeight(12),
-    paddingHorizontal: '8%',
-    flexDirection: 'row',
-    borderRadius: 30,
-    width: '80%',
-    justifyContent: 'space-evenly',
   },
   IconImg: {
     height: ResWidth(24),
@@ -130,7 +150,7 @@ const styles = StyleSheet.create({
   textLogin: {
     textAlign: 'center',
     color: Colors.WHITE,
-    fontFamily: 'Poppins-Medium',
+
     fontSize: ResWidth(14),
     letterSpacing: 0.5,
   },
@@ -143,45 +163,10 @@ const styles = StyleSheet.create({
     fontSize: ResWidth(14),
     textAlign: 'center',
     letterSpacing: 0.4,
-    fontFamily: 'Poppins-Light',
-  },
-  wrapInputEmail: {
-    marginTop: '10%',
-    backgroundColor: 'white',
-    paddingVertical: 6,
-    paddingHorizontal: 16,
-    borderRadius: 15,
-  },
-  inputEmail: {
-    color: Colors.FontColor,
-    fontWeight: '400',
-    fontSize: 14,
-  },
-  wrapInputPassword: {
-    marginTop: '4%',
-    backgroundColor: 'white',
-    paddingVertical: 6,
-    paddingHorizontal: 16,
-    borderRadius: 15,
-  },
-  inputPassword: {
-    color: Colors.FontColor,
-    fontWeight: '400',
-    fontSize: 14,
-    outlineStyle: 'none',
   },
   wrapCTA: {
-    marginTop: ResHeight(30),
     marginHorizontal: '10%',
-    backgroundColor: Colors.BUTTON_BG,
-    paddingVertical: ResHeight(12),
-    flexDirection: 'row',
-    borderRadius: 30,
-    width: '80%',
-    justifyContent: 'space-evenly',
-  },
-  wrapCtaForget: {
-    marginTop: '4%',
+    marginTop: ResHeight(16),
   },
 
   wrapSignUp: {
@@ -192,7 +177,7 @@ const styles = StyleSheet.create({
   textHaveAccount: {
     textAlign: 'center',
     color: 'white',
-    fontFamily: 'Poppins-Regular',
+
     letterSpacing: 0.6,
     fontSize: 14,
     marginVertical: '5%',
@@ -203,20 +188,13 @@ const styles = StyleSheet.create({
   textCtaSignUp: {
     color: 'white',
     fontSize: 14,
-    fontFamily: 'Poppins-Regular',
     letterSpacing: 0.6,
   },
-  wrapAgreement: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: '10%',
-    marginTop: '3%',
-  },
-  titleAgreement: {
-    color: 'white',
-    fontSize: 14,
-    fontFamily: 'Poppins-Regular',
-    letterSpacing: 0.3,
+  titleRegister: {
+    textAlign: 'center',
+    color: Colors.WHITE,
+    fontSize: Platform.OS == 'ios' ? ResHeight(13) : ResHeight(14),
+    letterSpacing: 1,
+    fontWeight: '400',
   },
 });
