@@ -7,6 +7,7 @@ import {
   ScrollView,
   ImageBackground,
   Button,
+  SafeAreaView,
 } from 'react-native';
 import Router from './Router';
 import {NavigationContainer} from '@react-navigation/native';

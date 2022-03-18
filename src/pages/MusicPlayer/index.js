@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Image,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import Colors from './../../assets/Colors';
 import {
@@ -18,12 +19,14 @@ import {
   IconPlay,
   IconTimer,
   BackgroundPageMucic,
+  IconSaveLove,
 } from '../../assets/img';
+import {ResHeight, ResWidth} from '../../utils/responsive';
 
 const MusicPlayer = ({navigation}) => {
   const [onPress, setOnPress] = useState(false);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
         source={BackgroundPageMucic}
         style={styles.BackgroundPage}>
@@ -37,7 +40,7 @@ const MusicPlayer = ({navigation}) => {
           </View>
           {/* Bagian Atas Kanan */}
           <View style={styles.wrapTopRight}>
-            <Image source={IconLove} style={styles.IconBack} />
+            <Image source={IconSaveLove} style={styles.IconBack} />
             <Image source={IconDownloads} style={styles.IconBack} />
           </View>
         </View>
@@ -61,7 +64,7 @@ const MusicPlayer = ({navigation}) => {
           </View>
         </View>
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -84,17 +87,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: '5%',
-    paddingTop: '5%',
-    // backgroundColor: 'red',
+    paddingVertical: '2%',
   },
   IconBack: {
-    height: 40,
-    width: 40,
+    height: ResHeight(35),
+    width: ResWidth(42),
   },
   wrapTopRight: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '25%',
+    width: '30%',
   },
   content: {
     position: 'absolute',
@@ -111,14 +113,12 @@ const styles = StyleSheet.create({
     color: Colors.FontColor,
     fontSize: 28,
     letterSpacing: 0.7,
-    fontFamily: 'Poppins-Medium',
   },
   description: {
     color: Colors.FontColor,
     fontSize: 14,
     letterSpacing: 0.7,
     opacity: 0.7,
-    fontFamily: 'Poppins-Lights',
   },
   wrapButtonNavigate: {
     marginTop: '15%',
