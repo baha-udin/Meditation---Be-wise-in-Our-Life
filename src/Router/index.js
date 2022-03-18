@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Register">
+    <Stack.Navigator initialRouteName="BottomNavigation">
       <Stack.Screen
         name="Splash"
         component={Splash}

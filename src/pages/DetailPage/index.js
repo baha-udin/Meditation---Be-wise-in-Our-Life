@@ -8,6 +8,7 @@ import {
   ImageBackground,
   Button,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import Colors from '../../assets/Colors';
 import {
@@ -20,10 +21,11 @@ import {
   IconTinyLove,
   ImageDownload,
 } from '../../assets/img';
+import CardMusic from '../../components/Atoms/CardMusic';
 
 const DetailPage = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView vertical style={styles.mainContent}>
         <View style={styles.sectionTop}>
           <ImageBackground source={BgTop} style={styles.bgTop}>
@@ -75,28 +77,28 @@ const DetailPage = ({navigation}) => {
             <View style={styles.wrapRelated}>
               {/* Mulai */}
               <View style={styles.cardPlaylist}>
-                <View style={styles.card1}>
-                  <Image source={CardNight} style={styles.imgCard} />
-                  <Text style={styles.titleCardNight}>Night Island</Text>
-                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-                </View>
-                <View style={styles.card1}>
-                  <Image source={CardSleep} style={styles.imgCard} />
-                  <Text style={styles.titleCardNight}>Sweet Sleep</Text>
-                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-                </View>
+                <CardMusic
+                  imgCard={CardNight}
+                  title="Night Island"
+                  desc="45 MIN . SLEEP MUSIC"
+                />
+                <CardMusic
+                  imgCard={CardSleep}
+                  title="Sweet Sleep"
+                  desc="45 MIN . SLEEP MUSIC"
+                />
               </View>
               <View style={styles.cardPlaylist2}>
-                <View style={styles.card1}>
-                  <Image source={CardNight} style={styles.imgCard} />
-                  <Text style={styles.titleCardNight}>Night Island</Text>
-                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-                </View>
-                <View style={styles.card1}>
-                  <Image source={CardSleep} style={styles.imgCard} />
-                  <Text style={styles.titleCardNight}>Sweet Sleep</Text>
-                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-                </View>
+                <CardMusic
+                  imgCard={CardNight}
+                  title="Night Island"
+                  desc="45 MIN . SLEEP MUSIC"
+                />
+                <CardMusic
+                  imgCard={CardSleep}
+                  title="Sweet Sleep"
+                  desc="45 MIN . SLEEP MUSIC"
+                />
               </View>
             </View>
           </View>
@@ -108,7 +110,7 @@ const DetailPage = ({navigation}) => {
           <Text style={styles.playNow}>PLAY</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -271,6 +273,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     paddingHorizontal: '5%',
+    borderRadius: 10,
   },
   playNow: {
     backgroundColor: Colors.BUTTON_BG,
@@ -281,7 +284,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     textAlign: 'center',
-    borderRadius: 12,
+    borderRadius: 10,
   },
 });
 
