@@ -26,6 +26,7 @@ import {
 import Colors from './../../assets/Colors';
 import {ResHeight, ResWidth} from '../../utils/responsive';
 import CardMusic from '../../components/Atoms/CardMusic';
+import CardCategory from '../../components/Atoms/CardCategory';
 
 const Home = ({navigation}) => {
   const isDark = useColorScheme() === 'light';
@@ -48,69 +49,54 @@ const Home = ({navigation}) => {
                 <ScrollView horizontal>
                   <View style={styles.feature}>
                     {/* card 1 */}
-                    <View style={styles.cardFeature}>
-                      <View style={styles.wrapIcon}>
-                        <Image style={styles.iconFeature} source={IconAll} />
-                      </View>
-                      <Text style={styles.textFeature}>All</Text>
-                    </View>
-
+                    <CardCategory
+                      source={IconAll}
+                      title="All"
+                      color={Colors.BUTTON_BG}
+                      onPress={() => navigation.navigate('DetailCategory')}
+                    />
                     {/* card 2 */}
-                    <View style={styles.cardFeature}>
-                      <View style={styles.wrapIconOther}>
-                        <Image style={styles.iconFeature} source={IconSleep} />
-                      </View>
-                      <Text style={styles.textFeature}>My</Text>
-                    </View>
-
+                    <CardCategory
+                      source={IconSleep}
+                      title="My"
+                      color={'#586894'}
+                      onPress={() => navigation.navigate('DetailCategory')}
+                    />
                     {/* card 3 */}
-                    <View style={styles.cardFeature}>
-                      <View style={styles.wrapIconOther}>
-                        <Image
-                          style={styles.iconFeature}
-                          source={IconAnxious}
-                        />
-                      </View>
-                      <Text style={styles.textFeature}>Anxious</Text>
-                    </View>
-
+                    <CardCategory
+                      source={IconAnxious}
+                      title="Anxious"
+                      color={'#586894'}
+                      onPress={() => navigation.navigate('DetailCategory')}
+                    />
                     {/* card 4 */}
-                    <View style={styles.cardFeature}>
-                      <View style={styles.wrapIconOther}>
-                        <Image style={styles.iconFeature} source={IconSleep} />
-                      </View>
-                      <Text style={styles.textFeature}>Sleep</Text>
-                    </View>
-
+                    <CardCategory
+                      source={IconSleep}
+                      title="Sleep"
+                      color={'#586894'}
+                      onPress={() => navigation.navigate('DetailCategory')}
+                    />
                     {/* card 5 */}
-                    <View style={styles.cardFeature}>
-                      <View style={styles.wrapIconOther}>
-                        <Image style={styles.iconFeature} source={IconKids} />
-                      </View>
-                      <Text style={styles.textFeature}>Kids</Text>
-                    </View>
-
+                    <CardCategory
+                      source={IconKids}
+                      title="Kids"
+                      color={'#586894'}
+                      onPress={() => navigation.navigate('DetailCategory')}
+                    />
                     {/* card 6 */}
-                    <View style={styles.cardFeature}>
-                      <View style={styles.wrapIconOther}>
-                        <Image
-                          style={styles.iconFeature}
-                          source={IconAnxious}
-                        />
-                      </View>
-                      <Text style={styles.textFeature}>My</Text>
-                    </View>
-
+                    <CardCategory
+                      source={IconAnxious}
+                      title="My"
+                      color="#586894"
+                      onPress={() => navigation.navigate('DetailCategory')}
+                    />
                     {/* card 7 */}
-                    <View style={styles.cardFeature}>
-                      <View style={styles.wrapIconOther}>
-                        <Image
-                          style={styles.iconFeature}
-                          source={IconAnxious}
-                        />
-                      </View>
-                      <Text style={styles.textFeature}>Anxious</Text>
-                    </View>
+                    <CardCategory
+                      source={IconSleep}
+                      title="Sleep"
+                      color="#586894"
+                      onPress={() => navigation.navigate('DetailCategory')}
+                    />
                   </View>
                 </ScrollView>
               </View>
@@ -181,7 +167,7 @@ const styles = StyleSheet.create({
   },
   bgHero: {
     width: '100%',
-    height: 250,
+    height: ResHeight(250),
     backfaceVisibility: 'visible',
     resizeMode: 'cover',
   },
@@ -189,59 +175,38 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
-    paddingHorizontal: 20,
-    paddingBottom: 16,
+    paddingHorizontal: ResWidth(20),
+    paddingBottom: ResHeight(16),
   },
   Header: {
     display: 'flex',
     flexDirection: 'column',
-    marginTop: 40,
+    marginTop: ResHeight(40),
   },
   titleHeader: {
     color: 'white',
-    fontSize: 24,
+    fontSize: ResWidth(24),
     fontWeight: 'bold',
     textAlign: 'center',
   },
   descHeader: {
-    marginTop: 8,
+    marginTop: ResHeight(8),
     color: 'white',
-    fontSize: 14,
+    fontSize: ResWidth(14),
     fontWeight: '300',
     textAlign: 'center',
-    paddingRight: 8,
+    paddingRight: ResWidth(8),
     letterSpacing: 0.6,
   },
   feature: {
     display: 'flex',
-    marginTop: 32,
+    marginTop: ResHeight(10),
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  cardFeature: {
-    display: 'flex',
-    flexDirection: 'column',
-    paddingRight: 12,
-  },
-  wrapIcon: {
-    paddingVertical: 16,
-    paddingHorizontal: 14,
-    borderRadius: 20,
-    backgroundColor: '#8E97FD',
-  },
-  wrapIconOther: {
-    paddingVertical: 16,
-    paddingHorizontal: 14,
-    borderRadius: 20,
-    backgroundColor: '#586894',
-  },
-  textFeature: {
-    marginTop: 12,
-    color: 'white',
-    textAlign: 'center',
-  },
+
   cardMoon: {
-    marginTop: 16,
+    marginTop: ResHeight(-60),
     paddingHorizontal: '5%',
     display: 'flex',
     flexDirection: 'column',
@@ -256,8 +221,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bgCard: {
-    width: 336,
-    height: 200,
+    width: ResWidth(336),
+    height: ResHeight(200),
     resizeMode: 'contain',
     borderRadius: 20,
   },
@@ -266,17 +231,17 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   titleMoon: {
-    fontSize: 24,
+    fontSize: ResWidth(24),
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 4,
     color: '#FFE7BF',
   },
   descMoon: {
-    fontSize: 14,
+    fontSize: ResWidth(14),
     fontWeight: '300',
     textAlign: 'center',
-    paddingHorizontal: 12,
+    paddingHorizontal: ResWidth(12),
     marginTop: 2,
     color: 'white',
   },
@@ -285,10 +250,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 8,
+    marginTop: ResHeight(8),
     backgroundColor: 'white',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    paddingHorizontal: ResWidth(12),
+    paddingVertical: ResHeight(8),
     textAlign: 'center',
     borderRadius: 10,
     fontWeight: '600',

@@ -9,9 +9,11 @@ import Login from './Login';
 import Register from './Register';
 import OnBoarding from './OnBoarding';
 import MusicPlayer from './MusicPlayer';
+import DetailCategory from './DetailCategory';
 
 export {
   Home,
+  DetailCategory,
   MusicPlayer,
   DetailPage,
   Meditate,
