@@ -12,4 +12,4 @@ const Colors = {
   InActiveMenu: '#98A1BD',
 };
 
-export default Colors;
+export default Colors

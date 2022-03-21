@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -6,8 +6,7 @@ import {
   Image,
   ScrollView,
   ImageBackground,
-  Button,
-  TouchableOpacity,
+  useColorScheme,
   SafeAreaView,
   StatusBar,
 } from 'react-native';
@@ -25,11 +24,14 @@ import {
   IconKids,
 } from '../../assets/img';
 import Colors from './../../assets/Colors';
+import {ResHeight, ResWidth} from '../../utils/responsive';
+import CardMusic from '../../components/Atoms/CardMusic';
 
 const Home = ({navigation}) => {
+  const isDark = useColorScheme() === 'light';
   return (
     <SafeAreaView style={{backgroundColor: Colors.Basic_BG}}>
-      <StatusBar StatusBarStyle="dark-content" />
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
           <View showsVerticalScrollIndicator vertical>
@@ -133,53 +135,34 @@ const Home = ({navigation}) => {
 
             {/* Bagian card bawah 1*/}
             <ScrollView horizontal style={styles.cardPlaylist}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('DetailPage')}>
-                <View style={styles.card1}>
-                  <Image source={CardNight} style={styles.imgCard} />
-                  <Text style={styles.titleCardNight}>Night Island</Text>
-                  <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-                </View>
-              </TouchableOpacity>
-              <View style={styles.card1}>
-                <Image source={CardSleep} style={styles.imgCard} />
-                <Text style={styles.titleCardNight}>Sweet Sleep</Text>
-                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-              </View>
-              <View style={styles.card1}>
-                <Image source={CardNight} style={styles.imgCard} />
-                <Text style={styles.titleCardNight}>Night Island</Text>
-                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-              </View>
-              <View style={styles.card1}>
-                <Image source={CardMoon} style={styles.imgCard} />
-                <Text style={styles.titleCardNight}>Moon Clouds</Text>
-                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-              </View>
+              <CardMusic
+                imgCard={CardNight}
+                title="Night Island"
+                desc="45 MIN . SLEEP MUSIC"
+                onPress={() => navigation.navigate('DetailPage')}
+              />
+              <CardMusic
+                imgCard={CardNight}
+                title="Night Island"
+                desc="45 MIN . SLEEP MUSIC"
+                onPress={() => navigation.navigate('DetailPage')}
+              />
             </ScrollView>
 
             {/* Bagian card bawah 2*/}
             <ScrollView horizontal style={styles.cardPlaylist}>
-              <View style={styles.card1}>
-                <Image source={CardNight} style={styles.imgCard} />
-                <Text style={styles.titleCardNight}>Night Island</Text>
-                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-              </View>
-              <View style={styles.card1}>
-                <Image source={CardSleep} style={styles.imgCard} />
-                <Text style={styles.titleCardNight}>Sweet Sleep</Text>
-                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-              </View>
-              <View style={styles.card1}>
-                <Image source={CardNight} style={styles.imgCard} />
-                <Text style={styles.titleCardNight}>Night Island</Text>
-                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-              </View>
-              <View style={styles.card1}>
-                <Image source={CardNight} style={styles.imgCard} />
-                <Text style={styles.titleCardNight}>Moon Clouds</Text>
-                <Text style={styles.descCardNight}>45 MIN . SLEEP MUSIC</Text>
-              </View>
+              <CardMusic
+                imgCard={CardNight}
+                title="Night Island"
+                desc="45 MIN . SLEEP MUSIC"
+                onPress={() => navigation.navigate('DetailPage')}
+              />
+              <CardMusic
+                imgCard={CardNight}
+                title="Night Island"
+                desc="45 MIN . SLEEP MUSIC"
+                onPress={() => navigation.navigate('DetailPage')}
+              />
             </ScrollView>
           </View>
         </View>
@@ -314,36 +297,10 @@ const styles = StyleSheet.create({
   cardPlaylist: {
     display: 'flex',
     flexDirection: 'row',
-    paddingHorizontal: 20,
+    paddingHorizontal: ResWidth(20),
     marginTop: '4%',
     marginBottom: '1%',
     paddingBottom: '2%',
-    // backgroundColor: 'red',
-  },
-  card1: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    paddingRight: 14,
-  },
-  imgCard: {
-    width: 180,
-    height: 100,
-    borderRadius: 12,
-  },
-  titleCardNight: {
-    marginTop: 8,
-    color: '#E6E7F2',
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  descCardNight: {
-    marginTop: 6,
-    color: '#E6E7F2',
-    opacity: 0.9,
-    fontSize: 13,
-    fontWeight: '300',
   },
 });
 

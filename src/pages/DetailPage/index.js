@@ -224,11 +224,14 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#E6E7F2',
   },
-  wrapRelated: {},
+  wrapRelated: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   cardPlaylist: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: 16,
     marginBottom: 8,

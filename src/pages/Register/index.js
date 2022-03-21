@@ -25,6 +25,7 @@ const Register = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [validate, setValidate] = useState('Data masih ada yang kosong');
+  const [erorrRegister, setErrorRegister] = useState('Gagal Registrasi');
 
   const handleRegister = () => {
     if ((fullName == '' || email == '', password == '')) {
@@ -40,6 +41,7 @@ const Register = ({navigation}) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           console.log('error register', errorMessage);
+          Alert.alert(erorrRegister);
         });
     }
   };
