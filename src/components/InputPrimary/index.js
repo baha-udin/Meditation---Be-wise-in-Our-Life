@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '400',
     fontSize: ResWidth(14),
-    paddingVertical: 15,
+    paddingVertical: ResHeight(10),
   },
 });

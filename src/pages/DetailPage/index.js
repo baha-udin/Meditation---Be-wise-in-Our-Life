@@ -9,6 +9,8 @@ import {
   Button,
   TouchableOpacity,
   SafeAreaView,
+  StatusBar,
+  useColorScheme,
 } from 'react-native';
 import Colors from '../../assets/Colors';
 import {
@@ -22,10 +24,13 @@ import {
   ImageDownload,
 } from '../../assets/img';
 import CardMusic from '../../components/Atoms/CardMusic';
+import {ResHeight} from '../../utils/responsive';
 
 const DetailPage = ({navigation}) => {
+  const isDark = useColorScheme() == 'light';
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={isDark ? 'dark-content' : 'light-content'} />
       <ScrollView vertical style={styles.mainContent}>
         <View style={styles.sectionTop}>
           <ImageBackground source={BgTop} style={styles.bgTop}>
@@ -81,11 +86,13 @@ const DetailPage = ({navigation}) => {
                   imgCard={CardNight}
                   title="Night Island"
                   desc="45 MIN . SLEEP MUSIC"
+                  onPress={() => navigation.navigate('MusicPlayer')}
                 />
                 <CardMusic
                   imgCard={CardSleep}
                   title="Sweet Sleep"
                   desc="45 MIN . SLEEP MUSIC"
+                  onPress={() => navigation.navigate('MusicPlayer')}
                 />
               </View>
               <View style={styles.cardPlaylist2}>
@@ -93,11 +100,13 @@ const DetailPage = ({navigation}) => {
                   imgCard={CardNight}
                   title="Night Island"
                   desc="45 MIN . SLEEP MUSIC"
+                  onPress={() => navigation.navigate('MusicPlayer')}
                 />
                 <CardMusic
                   imgCard={CardSleep}
                   title="Sweet Sleep"
                   desc="45 MIN . SLEEP MUSIC"
+                  onPress={() => navigation.navigate('MusicPlayer')}
                 />
               </View>
             </View>
@@ -233,9 +242,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 16,
-    marginBottom: 8,
+    marginTop: ResHeight(16),
+    marginBottom: ResHeight(8),
     paddingBottom: '8%',
+    width: '100%',
+    paddingHorizontal: '2%',
   },
   cardPlaylist2: {
     display: 'flex',
@@ -243,7 +254,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     marginTop: '-5%',
-    marginBottom: 8,
+    marginBottom: ResHeight(8),
+    width: '100%',
+    paddingHorizontal: '2%',
   },
   card1: {
     display: 'flex',

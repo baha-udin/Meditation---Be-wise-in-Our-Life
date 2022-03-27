@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingRight: 14,
   },
   imgCard: {
     width: ResWidth(150),

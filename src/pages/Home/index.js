@@ -10,6 +10,7 @@ import {
   SafeAreaView,
   StatusBar,
 } from 'react-native';
+
 import {
   CardNight,
   Ornamen,
@@ -29,14 +30,17 @@ import CardMusic from '../../components/Atoms/CardMusic';
 import CardCategory from '../../components/Atoms/CardCategory';
 
 const Home = ({navigation}) => {
-  const isDark = useColorScheme() === 'light';
+  const isDark = useColorScheme() === 'dark';
   return (
     <SafeAreaView style={{backgroundColor: Colors.Basic_BG}}>
       <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
           <View showsVerticalScrollIndicator vertical>
-            <ImageBackground source={Ornamen} style={styles.bgHero}>
+            <ImageBackground
+              source={Ornamen}
+              style={styles.bgHero}
+              resizeMode="cover">
               {/* bagian isi */}
               <View style={styles.content}>
                 <View style={styles.Header}>
@@ -120,7 +124,7 @@ const Home = ({navigation}) => {
             </View>
 
             {/* Bagian card bawah 1*/}
-            <ScrollView horizontal style={styles.cardPlaylist}>
+            <View horizontal style={styles.cardPlaylist}>
               <CardMusic
                 imgCard={CardNight}
                 title="Night Island"
@@ -128,15 +132,15 @@ const Home = ({navigation}) => {
                 onPress={() => navigation.navigate('DetailPage')}
               />
               <CardMusic
-                imgCard={CardNight}
+                imgCard={CardSleep}
                 title="Night Island"
                 desc="45 MIN . SLEEP MUSIC"
                 onPress={() => navigation.navigate('DetailPage')}
               />
-            </ScrollView>
+            </View>
 
             {/* Bagian card bawah 2*/}
-            <ScrollView horizontal style={styles.cardPlaylist}>
+            <View horizontal style={styles.cardPlaylist}>
               <CardMusic
                 imgCard={CardNight}
                 title="Night Island"
@@ -144,12 +148,42 @@ const Home = ({navigation}) => {
                 onPress={() => navigation.navigate('DetailPage')}
               />
               <CardMusic
+                imgCard={CardSleep}
+                title="Night Island"
+                desc="45 MIN . SLEEP MUSIC"
+                onPress={() => navigation.navigate('DetailPage')}
+              />
+            </View>
+            {/* Bagian card bawah 3*/}
+            <View horizontal style={styles.cardPlaylist}>
+              <CardMusic
                 imgCard={CardNight}
                 title="Night Island"
                 desc="45 MIN . SLEEP MUSIC"
                 onPress={() => navigation.navigate('DetailPage')}
               />
-            </ScrollView>
+              <CardMusic
+                imgCard={CardSleep}
+                title="Night Island"
+                desc="45 MIN . SLEEP MUSIC"
+                onPress={() => navigation.navigate('DetailPage')}
+              />
+            </View>
+            {/* Bagian card bawah 4*/}
+            <View horizontal style={styles.cardPlaylist}>
+              <CardMusic
+                imgCard={CardNight}
+                title="Night Island"
+                desc="45 MIN . SLEEP MUSIC"
+                onPress={() => navigation.navigate('DetailPage')}
+              />
+              <CardMusic
+                imgCard={CardSleep}
+                title="Night Island"
+                desc="45 MIN . SLEEP MUSIC"
+                onPress={() => navigation.navigate('DetailPage')}
+              />
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -206,7 +240,7 @@ const styles = StyleSheet.create({
   },
 
   cardMoon: {
-    marginTop: ResHeight(-60),
+    marginTop: ResHeight(-50),
     paddingHorizontal: '5%',
     display: 'flex',
     flexDirection: 'column',
@@ -266,6 +300,8 @@ const styles = StyleSheet.create({
     marginTop: '4%',
     marginBottom: '1%',
     paddingBottom: '2%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 

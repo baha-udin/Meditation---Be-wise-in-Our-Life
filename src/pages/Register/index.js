@@ -10,6 +10,9 @@ import {
   TouchableOpacity,
   Alert,
   SafeAreaView,
+  ActivityIndicator,
+  useColorScheme,
+  StatusBar,
 } from 'react-native';
 import {ResWidth, ResHeight} from './../../utils/responsive';
 import Colors from '../../assets/Colors';
@@ -21,21 +24,26 @@ import {Fire} from './../../config';
 import ButtonThirdParty from '../../components/ButtonThirdParty';
 
 const Register = ({navigation}) => {
+  const isDark = useColorScheme() == 'light';
+
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [validate, setValidate] = useState('Data masih ada yang kosong');
   const [erorrRegister, setErrorRegister] = useState('Gagal Registrasi');
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = () => {
     if ((fullName == '' || email == '', password == '')) {
       Alert.alert(validate);
     } else {
+      setLoading(true);
       Fire.auth()
         .createUserWithEmailAndPassword(email.trim(), password)
         .then(success => {
           console.log('berhasil login', success);
         })
+        .then(setLoading(false))
         .then(() => navigation.navigate('BottomNavigation', {screen: 'Home'}))
         .catch(error => {
           const errorCode = error.code;
@@ -47,6 +55,7 @@ const Register = ({navigation}) => {
   };
   return (
     <View style={styles.container}>
+      <StatusBar barStyle={isDark ? 'dark-content' : 'light-content'} />
       <ScrollView>
         <ImageBackground source={BgLogin} style={styles.BgImg}>
           <View style={styles.sectionHeader}>
@@ -96,10 +105,17 @@ const Register = ({navigation}) => {
             />
           </View>
           {/* Button Submit */}
+          <Gap height={ResHeight(20)} />
           <View style={styles.wrapCTA}>
             <ButtonPrimary
               onPress={handleRegister}
-              titleButton="Register"
+              titleButton={
+                loading ? (
+                  <ActivityIndicator size="small" color="#f4f4f4" />
+                ) : (
+                  'Register'
+                )
+              }
               titleStyle={styles.titleRegister}
             />
           </View>

@@ -6,6 +6,8 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  StatusBar,
+  useColorScheme,
 } from 'react-native';
 import CardMusic from '../../components/Atoms/CardMusic';
 import {ResHeight, ResWidth} from '../../utils/responsive';
@@ -14,9 +16,12 @@ import Colors from '../../assets/Colors';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const DetailCategory = ({navigation}) => {
+  const isDark = useColorScheme() == 'light';
+
   return (
     <>
       <SafeAreaView style={styles.wrapPage}>
+        <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
         <View
           style={{
             alignItems: 'center',
@@ -49,7 +54,7 @@ const DetailCategory = ({navigation}) => {
             </Text>
           </View>
         </View>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.feature}>
             <CardMusic
               imgCard={CardNight}
@@ -123,7 +128,8 @@ const styles = StyleSheet.create({
   },
   feature: {
     marginTop: ResHeight(10),
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     flexDirection: 'row',
+    alignItems: 'center',
   },
 });

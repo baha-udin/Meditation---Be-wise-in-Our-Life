@@ -47,55 +47,60 @@ const Login = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={BgLogin} style={styles.BgImg}>
-        <View style={styles.sectionHeader}>
-          <Text style={styles.titlePage}>Welcome Back!</Text>
-          {/* wrap Login FB & Google */}
-          <View style={styles.wrapLoginThirdparty}>
-            <ButtonThirdParty Image={IconFb} title="Continue with Facebook" />
-            <Gap height={ResHeight(16)} />
-            <ButtonThirdParty Image={IconGoogle} title="Continue with Google" />
-          </View>
-        </View>
-      </ImageBackground>
       <ScrollView>
-        <View style={styles.wrapLoginEmail}>
-          <Text style={styles.optionLogin}>Or Login with Email</Text>
-          <Gap height={30} />
-          <InputPrimary
-            placeholder="Input your email"
-            onChangeText={value => setEmail(value)}
-            value={email}
-          />
-          <Gap height={16} />
-          <InputPrimary
-            placeholder="Password"
-            onChangeText={value => setPassword(value)}
-            value={password}
-            secureTextEntry={true}
-          />
+        <ImageBackground source={BgLogin} style={styles.BgImg}>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.titlePage}>Welcome Back!</Text>
+            {/* wrap Login FB & Google */}
+            <View style={styles.wrapLoginThirdparty}>
+              <ButtonThirdParty Image={IconFb} title="Continue with Facebook" />
+              <Gap height={ResHeight(16)} />
+              <ButtonThirdParty
+                Image={IconGoogle}
+                title="Continue with Google"
+              />
+            </View>
+          </View>
+        </ImageBackground>
+        <ScrollView>
+          <View style={styles.wrapLoginEmail}>
+            <Text style={styles.optionLogin}>Or Login with Email</Text>
+            <Gap height={30} />
+            <InputPrimary
+              placeholder="Input your email"
+              onChangeText={value => setEmail(value)}
+              value={email}
+            />
+            <Gap height={16} />
+            <InputPrimary
+              placeholder="Password"
+              onChangeText={value => setPassword(value)}
+              value={password}
+              secureTextEntry={true}
+            />
+          </View>
+          <Gap height={ResHeight(24)} />
+          <View style={{paddingHorizontal: '10%'}}>
+            <ButtonPrimary
+              onPress={handlLogin}
+              titleButton="Login"
+              titleStyle={styles.CTAStyle}
+            />
+          </View>
+          {/* Section Forgot Password */}
+          <TouchableOpacity style={styles.wrapCtaForget}>
+            <Text style={styles.forgetPassword}>Forgot Password?</Text>
+          </TouchableOpacity>
+        </ScrollView>
+        <View style={styles.wrapSignUp}>
+          <Text style={styles.textHaveAccount}>Don't have an account?</Text>
+          <TouchableOpacity
+            style={styles.ctaSignUp}
+            onPress={() => navigation.navigate('Register')}>
+            <Text style={styles.textCtaSignUp}>Register here</Text>
+          </TouchableOpacity>
         </View>
-        <Gap height={ResHeight(24)} />
-        <View style={{paddingHorizontal: '10%'}}>
-          <ButtonPrimary
-            onPress={handlLogin}
-            titleButton="Login"
-            titleStyle={styles.CTAStyle}
-          />
-        </View>
-        {/* Section Forgot Password */}
-        <TouchableOpacity style={styles.wrapCtaForget}>
-          <Text style={styles.forgetPassword}>Forgot Password?</Text>
-        </TouchableOpacity>
       </ScrollView>
-      <View style={styles.wrapSignUp}>
-        <Text style={styles.textHaveAccount}>Don't have an account?</Text>
-        <TouchableOpacity
-          style={styles.ctaSignUp}
-          onPress={() => navigation.navigate('Register')}>
-          <Text style={styles.textCtaSignUp}>Register here</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };

@@ -7,13 +7,22 @@ import {
 } from '../../assets/img';
 import Colors from './../../assets/Colors';
 import Fonts from './../../assets/fonts';
+import {Fire} from './../../config';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
-    setTimeout(() => {
-      navigation.replace('OnBoarding');
-    }, 6000);
-  }, []);
+    const unsubscribe = Fire.auth().onAuthStateChanged(user => {
+      setTimeout(() => {
+        if (user) {
+          navigation.replace('BottomNavigation');
+        } else {
+          navigation.replace('GetStarted');
+        }
+      }, 4000);
+    });
+
+    return () => unsubscribe();
+  }, [navigation]);
 
   return (
     <View style={styles.container}>

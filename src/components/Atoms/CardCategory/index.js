@@ -22,6 +22,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     paddingRight: ResWidth(12),
+
+    height: ResHeight(80),
   },
   wrapIcon: color => ({
     paddingVertical: ResHeight(16),
@@ -30,8 +32,8 @@ const styles = StyleSheet.create({
     backgroundColor: color,
   }),
   wrapIconOther: {
-    paddingVertical: ResHeight(8),
-    paddingHorizontal: ResWidth(12),
+    paddingVertical: ResHeight(12),
+    paddingHorizontal: ResWidth(16),
     borderRadius: 20,
     backgroundColor: '#586894',
   },

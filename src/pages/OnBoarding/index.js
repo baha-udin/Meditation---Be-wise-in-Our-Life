@@ -44,13 +44,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   wrapImage: {
-    paddingHorizontal: '20%',
-    marginTop: '30%',
+    paddingHorizontal: '8%',
+    marginTop: '20%',
   },
   heroImage: {
     width: ResWidth(200),
     height: 'auto',
-    resizeMode: 'center',
+    resizeMode: 'contain',
   },
   wrapText: {
     justifyContent: 'center',

@@ -40,8 +40,8 @@ const MusicPlayer = ({navigation}) => {
           </View>
           {/* Bagian Atas Kanan */}
           <View style={styles.wrapTopRight}>
-            <Image source={IconSaveLove} style={styles.IconBack} />
-            <Image source={IconDownloads} style={styles.IconBack} />
+            <Image source={IconSaveLove} style={styles.buttonLove} />
+            <Image source={IconDownloads} style={styles.buttonSave} />
           </View>
         </View>
         {/* bagian content */}
@@ -90,14 +90,26 @@ const styles = StyleSheet.create({
     paddingVertical: '2%',
   },
   IconBack: {
-    height: ResHeight(35),
+    height: ResHeight(48),
     width: ResWidth(42),
+    resizeMode: 'contain',
   },
   wrapTopRight: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '30%',
   },
+  buttonLove: {
+    height: ResHeight(48),
+    width: ResWidth(50),
+    resizeMode: 'contain',
+  },
+  buttonSave: {
+    height: ResHeight(45),
+    width: ResWidth(45),
+    resizeMode: 'contain',
+  },
+
   content: {
     position: 'absolute',
     height: '50%',
